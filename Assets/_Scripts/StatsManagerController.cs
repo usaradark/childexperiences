@@ -5,11 +5,18 @@ using UnityEngine;
 public class StatsManagerController : MonoBehaviour
 {
     public float playerHP;
+    public float playerHPGain;
     public float playerHPLoss;
     public float momHP;
+    public float momHPGain;
     public float momHPLoss;
     public float shelterHP;
+    public float shelterHPGain;
     public float shelterHPLoss;
+
+    public int myFood;
+    public int myWood;
+    public int myMedicine;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,18 +29,32 @@ public class StatsManagerController : MonoBehaviour
         
     }
     
-    //Add newVal to the desired HP value
-    public void AddToPlayerHP(float newVal)
+    //Increases player HP by playerHPGain value
+    public void IncreasePlayerHP()
     {
-        playerHP += newVal;
+        playerHP += playerHPGain;
     }
-    public void AddToMomHP(float newVal)
+    public void IncreaseMomHP()
     {
-        momHP += newVal;
+        momHP += momHPGain;
     }
-    public void AddToShelterHP(float newVal)
+    public void IncreaseShelterHP()
     {
-        shelterHP += newVal;
+        shelterHP += shelterHPGain;
+    }
+
+    //Decrease player HP by playerHPLoss value
+    public void DecreasePlayerHP()
+    {
+        playerHP -= playerHPLoss;
+    }
+    public void DecreaseMomHP()
+    {
+        momHP -= momHPLoss;
+    }
+    public void DecreaseShelterHP()
+    {
+        shelterHP -= shelterHPLoss;
     }
 
     //Sets the desired loss rate to newLoss
@@ -48,5 +69,19 @@ public class StatsManagerController : MonoBehaviour
     public void SetShelterLossRate(float newLoss)
     {
         shelterHPLoss = newLoss;
+    }
+
+    //adds newVal to the current desired inventory stat
+    public void AddToFood(int newVal)
+    {
+        myFood += newVal;
+    }
+    public void AddToWood(int newVal)
+    {
+        myWood += newVal;
+    }
+    public void AddToMedicine(int newVal)
+    {
+        myMedicine += newVal;
     }
 }
