@@ -23,5 +23,37 @@ public class HouseManagerController : MonoBehaviour
     public void RepairHouse()
     {
         smc.SetShelterLossRate(smc.shelterHPLoss / 2);
+        smc.AddToWood(-1);
+        Debug.Log(smc.myWood.ToString());
+    }
+
+    public void BuildFire()
+    {
+        smc.IncreaseShelterHP();
+        smc.AddToWood(-1);
+    }
+
+    public void HealSelf()
+    {
+        smc.SetPlayerLossRate(smc.playerHPLoss / 2);
+        smc.AddToMedicine(-1);
+    }
+
+    public void FeedSelf()
+    {
+        smc.IncreasePlayerHP();
+        smc.AddToMedicine(-1);
+    }
+
+    public void HealMom()
+    {
+        smc.SetMomLossRate(smc.momHPLoss / 2);
+        smc.AddToFood(-1);
+    }
+
+    public void FeedMom()
+    {
+        smc.IncreasePlayerHP();
+        smc.AddToFood(-1);
     }
 }
