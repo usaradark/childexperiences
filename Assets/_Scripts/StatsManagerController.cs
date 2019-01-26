@@ -10,6 +10,10 @@ public class StatsManagerController : MonoBehaviour
     public float momHPLoss;
     public float shelterHP;
     public float shelterHPLoss;
+
+    public int myFood;
+    public int myWood;
+    public int myMedicine;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,5 +52,19 @@ public class StatsManagerController : MonoBehaviour
     public void SetShelterLossRate(float newLoss)
     {
         shelterHPLoss = newLoss;
+    }
+
+    //adds newVal to the current desired inventory stat
+    public void AddToFood(int newVal)
+    {
+        myFood += newVal;
+    }
+    public void AddToWood(int newVal)
+    {
+        myWood += newVal;
+    }
+    public void AddToMedicine(int newVal)
+    {
+        myMedicine += newVal;
     }
 }
