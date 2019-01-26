@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StatsManagerController : MonoBehaviour
 {
@@ -26,7 +27,8 @@ public class StatsManagerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    //move to after any call that alters values
+        UpdateUI();
     }
     
     //Increases player HP by playerHPGain value
@@ -83,5 +85,13 @@ public class StatsManagerController : MonoBehaviour
     public void AddToMedicine(int newVal)
     {
         myMedicine += newVal;
+    }
+
+
+    public void UpdateUI()
+    {
+        GameObject.Find("MomHealth").GetComponent<Slider>().value = momHP;
+        GameObject.Find("SelfHealth").GetComponent<Slider>().value = playerHP;
+        GameObject.Find("Shelter").GetComponent<Slider>().value = shelterHP;
     }
 }
