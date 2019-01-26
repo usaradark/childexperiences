@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 469427717779690114}
   - component: {fileID: 469427717779690141}
   m_Layer: 5
-  m_Name: Shealter
+  m_Name: Shelter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
