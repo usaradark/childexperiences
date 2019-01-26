@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class LyndonPlayer : MonoBehaviour
 {
     float speed = 5.0f;
+    public Canvas interact_canvas;
+    public GameObject sceneInteract;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -19,7 +23,20 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Interactable"))
         {
-            print("hey");
+            interact_canvas.gameObject.SetActive(true);
+        }
+
+        if (Input.GetAxis("Interact") == 1)
+        {
+            sceneInteract.GetComponent<SceneInteract>().load("Church");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Interactable"))
+        {
+            interact_canvas.gameObject.SetActive(false);
         }
     }
 }
