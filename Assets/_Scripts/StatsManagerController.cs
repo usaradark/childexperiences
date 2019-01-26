@@ -91,7 +91,10 @@ public class StatsManagerController : MonoBehaviour
     public void UpdateUI()
     {
         GameObject.Find("MomHealth").GetComponent<Slider>().value = momHP;
+        GameObject.Find("MomHealth").transform.GetChild(3).GetComponent<Slider>().value = momHP - momHPLoss;
         GameObject.Find("SelfHealth").GetComponent<Slider>().value = playerHP;
+        GameObject.Find("SelfHealth").transform.GetChild(3).GetComponent<Slider>().value = playerHP - playerHPLoss;
         GameObject.Find("Shelter").GetComponent<Slider>().value = shelterHP;
+        GameObject.Find("Shelter").transform.GetChild(3).GetComponent<Slider>().value = shelterHP - shelterHPLoss;
     }
 }
