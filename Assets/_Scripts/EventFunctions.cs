@@ -278,23 +278,29 @@ public class EventFunctions : MonoBehaviour
     public void SelfTakeMedicine()
     {
         ZeroAll();
-        selfMedApplied += 2;
-        if (selfMedApplied <= 2)
-            deltaSelfHealthDecreaseRate = .5f;
-        else
-            deltaSelfHealthDecreaseRate = .25f;
-        deltaMedicine = -1;
+        if (selfMedApplied < 2)
+        {
+            selfMedApplied += 2;
+            if (selfMedApplied <= 2)
+                deltaSelfHealthDecreaseRate = .5f;
+            else
+                deltaSelfHealthDecreaseRate = .25f;
+            deltaMedicine = -1;
+        }
     }
 
     public void MomTakeMedicine()
     {
         ZeroAll();
-        momMedApplied += 2;
-        if (momMedApplied <= 2)
-            deltaMomHealthDecreaseRate = .5f;
-        else
-            deltaMomHealthDecreaseRate = .25f;
-        deltaMedicine = -1;
+        if (momMedApplied < 2)
+        {
+            momMedApplied += 2;
+            if (momMedApplied <= 2)
+                deltaMomHealthDecreaseRate = .5f;
+            else
+                deltaMomHealthDecreaseRate = .25f;
+            deltaMedicine = -1;
+        }
     }
 
     public void HeavyRain()

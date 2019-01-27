@@ -265,6 +265,8 @@ public class ABHandler : MonoBehaviour
                 }
                 panel.gameObject.SetActive(false);
                 panelMainText.text = "";
+                buttonAText.text = "Yes";
+                buttonBText.text = "No";
                 currentTag = "";
                 canControl = true;
                 break;
@@ -322,7 +324,7 @@ public class ABHandler : MonoBehaviour
                 {
                     //Who to give medicine to?
                     currentTag = "Med Cabinet 2";
-                    panelMainText.text = "Heal Mom or Yourself?";
+                    panelMainText.text = "Heal Mom or Yourself?\nCan only heal each once per Day";
                     buttonAText.text = "Heal Mom";
                     buttonBText.text = "Heal Yourself";
                 }
@@ -349,6 +351,8 @@ public class ABHandler : MonoBehaviour
                 canControl = true;
                 panel.gameObject.SetActive(false);
                 panelMainText.text = "";
+                buttonAText.text = "Yes";
+                buttonBText.text = "No";
                 currentTag = "";
                 break;
 
