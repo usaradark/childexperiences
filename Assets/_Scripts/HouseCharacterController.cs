@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HouseCharacterController : MonoBehaviour
 {
@@ -10,8 +11,14 @@ public class HouseCharacterController : MonoBehaviour
 
     private CharacterController myController;
     private HouseManagerController houseController;
+<<<<<<< HEAD
     private StatsManagerController smc;
     private bool waiting;
+=======
+
+    public GameObject panel;
+
+>>>>>>> 6d10b39adec248404b4f965270def3aa1517fdba
     // Start is called before the first frame update
     void Start()
     {
@@ -42,12 +49,16 @@ public class HouseCharacterController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && !waiting)
         {
+            panel.gameObject.SetActive(true);
+            Time.timeScale = 0;
             switch (collider.tag)
             {
                 case "Door":
-                    Debug.Log("Leave?");
+                    //Debug.Log("Leave?");
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "Leave?";
                     break;
                 case "Stove":
+<<<<<<< HEAD
                     if (smc.myFood > 0)
                     {
                         Debug.Log("Make food?");
@@ -67,8 +78,36 @@ public class HouseCharacterController : MonoBehaviour
                         Debug.Log("Building fire");
                         houseController.BuildFire();
                     }
+=======
+                    //Debug.Log("Make food?");
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "Make food?";
+                    break;
+                case "Hole":
+                    //Debug.Log("Repairing house");
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "Repairing house?";
+                    houseController.RepairHouse();
+                    break;
+                case "Fireplace":
+                    //Debug.Log("Build fire?");
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "Build Fire?";
+                    houseController.BuildFire();
+>>>>>>> 6d10b39adec248404b4f965270def3aa1517fdba
                     break;
             }
         }
+    }
+
+    public void Nah()
+    {
+        panel.transform.GetChild(0).GetComponent<Text>().text = "";
+        Time.timeScale = 1;
+        panel.SetActive(false); 
+    }
+
+    public void Yee()
+    {
+        panel.transform.GetChild(0).GetComponent<Text>().text = "";
+        Time.timeScale = 1;
+        panel.SetActive(false);
     }
 }

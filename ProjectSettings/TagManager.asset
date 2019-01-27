@@ -7,6 +7,8 @@ TagManager:
   - Interactable
   - Door
   - Hole
+  - Location
+  - Ignore
   layers:
   - Default
   - TransparentFX
