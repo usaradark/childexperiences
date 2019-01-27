@@ -6,32 +6,29 @@ using UnityEngine.UI;
 public class HouseCharacterController : MonoBehaviour
 {
     public float charaSpeed;
-    public GameObject houseManager;
+    public GameObject eventHandler;
     public GameObject statManager;
+    public GameObject panel;
 
     private CharacterController myController;
-    private HouseManagerController houseController;
+    private EventFunctions functions;
 
     private StatsManagerController smc;
-    //private bool waiting;
-    public GameObject panel;
+    private string currentTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
         myController = GetComponent<CharacterController>();
-        houseController = houseManager.GetComponent<HouseManagerController>();
+        functions = eventHandler.GetComponent<EventFunctions>();
         smc = statManager.GetComponent<StatsManagerController>();
-        //waiting = false;
+        currentTrigger = "";
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (!waiting)
-        //{
-            MovePlayer();
-       // }
+        MovePlayer();
     }
 
     private void MovePlayer()
@@ -58,20 +55,21 @@ public class HouseCharacterController : MonoBehaviour
                     if (smc.myFood > 0)
                     {
                         panel.transform.GetChild(0).GetComponent<Text>().text = "Make food?";
+                        currentTrigger = "Stove";
                     }
                     break;
                 case "Hole":
                     if (smc.myWood > 0)
                     {
-                        panel.transform.GetChild(0).GetComponent<Text>().text = "Repairing house?";
-                        houseController.RepairHouse();
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "Repair house?";
+                        currentTrigger = "Hole";
                     }
                     break;
                 case "Fireplace":
                     if (smc.myWood > 0)
                     {
                         panel.transform.GetChild(0).GetComponent<Text>().text = "Build Fire?";
-                        houseController.BuildFire();
+                        currentTrigger = "Fireplace";
                     }
                     break;
             }
@@ -88,7 +86,30 @@ public class HouseCharacterController : MonoBehaviour
     public void Yes()
     {
         panel.transform.GetChild(0).GetComponent<Text>().text = "";
+        RunTriggerAction();
         Time.timeScale = 1;
         panel.SetActive(false);
+    }
+
+    public void Yourself()
+    {
+
+    }
+
+    private void RunTriggerAction()
+    {
+        switch (currentTrigger)
+        {
+            case "Stove":
+                panel.transform.GetChild(0).GetComponent<Text>().text = "Feed Mom or Yourself?";
+                break;
+            case "Hole":
+                functions.HomeRepairRoof();
+                break;
+            case "Fire":
+                functions.CreateFire();
+                break;
+        }
+
     }
 }

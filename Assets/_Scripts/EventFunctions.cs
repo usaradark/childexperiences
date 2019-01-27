@@ -218,7 +218,6 @@ public void ChurchA1()
         deltaMomHealthDecreaseRate = .5f;
     }
 
-
     // Start is called before the first frame update
     void Start()
     {
