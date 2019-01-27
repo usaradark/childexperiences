@@ -37,6 +37,7 @@ public class dialogue_option : MonoBehaviour
             dialogue = badDialogue_2;
         else
             dialogue = goodDialogue_2;
+
         option1.gameObject.SetActive(false);
         option2.gameObject.SetActive(false);
         StartCoroutine(TypeSentence(dialogue));

@@ -23,6 +23,8 @@ public class highlight : MonoBehaviour
     public LayerMask groundLayer;
     public UnityEngine.AI.NavMeshAgent playerAgent;
 
+    public GameObject[] locations;
+
     #region Monobehavior API;
 
     // Start is called before the first frame update
@@ -40,13 +42,43 @@ public class highlight : MonoBehaviour
 
     private void OnMouseDown()
     {
-        prompt.gameObject.SetActive(true);
-        playerAgent.SetDestination(gameObject.transform.position);
-        promptLocation.text = locationName;
+        if (this.gameObject.CompareTag("Location"))
+        {
+            prompt.gameObject.SetActive(true);
+            playerAgent.SetDestination(gameObject.transform.position);
+            promptLocation.text = locationName;
 
-        Option1.onClick.AddListener(dia_opt.printOption_1_Result);
-        Option2.onClick.AddListener(dia_opt.printOption_2_Result);
+            Option1.onClick.RemoveAllListeners();
+            Option2.onClick.RemoveAllListeners();
+
+            Option1.onClick.AddListener(setLocationTagBack);
+            Option2.onClick.AddListener(setLocationTagBack);
+
+            Option1.onClick.AddListener(dia_opt.printOption_1_Result);
+            Option2.onClick.AddListener(dia_opt.printOption_2_Result);
+
+            setLocationTagToIgnore();
+        }
     }
+
+    public void setLocationTagToIgnore()
+    {
+        foreach (GameObject location in locations)
+        {
+            location.tag = "Ignore";
+        }
+    }
+
+    public void setLocationTagBack()
+    {
+        foreach (GameObject location in locations)
+        {
+            location.tag = "Location";
+        }
+    }
+
+
+
     #endregion
 
 }
