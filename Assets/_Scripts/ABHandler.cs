@@ -16,6 +16,7 @@ public class ABHandler : MonoBehaviour
 
     private StatsManagerController smc;
     private string currentTrigger;
+    private bool hasBeenOutside;
 
     public bool canControl;
 
@@ -31,6 +32,7 @@ public class ABHandler : MonoBehaviour
         smc = statManager.GetComponent<StatsManagerController>();
         currentTrigger = "";
         canControl = true;
+        hasBeenOutside = false;
     }
 
     // Update is called once per frame
@@ -104,10 +106,21 @@ public class ABHandler : MonoBehaviour
                     }
                     break;
                 case "Fire":
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "Use wood to make Fire?";
+                    if (smc.myMedicine > 0)
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "Use wood to make Fire?";
+                    else
+                    {
+                        panel.SetActive(false);
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                        currentTag = "";
+                        canControl = true;
+                    }
                     break;
                 case "Door":
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "Leave house?";
+                    if (!hasBeenOutside)
+                    {
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "Leave house?";
+                    }
                     break;
 
                 //outdoor
@@ -445,13 +458,13 @@ public class ABHandler : MonoBehaviour
                 {
                     Debug.Log("Underneath the layers of moldy, leftover food and empty trays you manage to find a few unspoiled cans of food." +
                         "You mutter yourself that hospital food is better than nothing.");
-                    functions.HarborB1();
+                    functions.HospitalB1();
                 }
                 else
                 {
                     Debug.Log("Knocked over shelves and empty pill bottles are strewn across the floor. You manage to crawl under a pair of shelves" +
                         "and find a couple medicine packs wedged behind one of the shelves.");
-                    functions.HarborB2();
+                    functions.HospitalB2();
                 }
                 panel.gameObject.SetActive(false);
                 panel.transform.GetChild(0).GetComponent<Text>().text = "";
@@ -463,7 +476,7 @@ public class ABHandler : MonoBehaviour
                 if (leftChoice)
                 {
                     Debug.Log("In the lumber section you manage to find a few relatively undamaged boards of plywood. You awkwardly hoist them onto your back and begin the walk home.");
-                    functions.HarborA1();
+                    functions.HardwareA1();
                     panel.gameObject.SetActive(false);
                     panel.transform.GetChild(0).GetComponent<Text>().text = "";
                     currentTag = "";
@@ -472,7 +485,7 @@ public class ABHandler : MonoBehaviour
                 else
                 {
                     Debug.Log("Hammers, screwdrivers, nails: it’s all still here. You grab a small bucket and patrol the aisles grabbing whatever you recognized from that DIY house projects show your dad used to watch.");
-                    functions.HarborA2();
+                    functions.HardwareA2();
                     panel.gameObject.SetActive(false);
                     panel.transform.GetChild(0).GetComponent<Text>().text = "";
                     currentTag = "";
@@ -484,7 +497,7 @@ public class ABHandler : MonoBehaviour
                 if (leftChoice)
                 {
                     Debug.Log("You see the man sanding down the damaged planks into finer lumber. He looks up again from his work and sees you carefully walking towards him. He pulls off his glasses and beckons you over. “Hey there, kid. Could you run over there and get me my tools? You do that and I’ll make sure you don’t walk home empty handed.” You quickly make it to his shed and grab his stuff. He thanks you and tells you to grab as much wood as you can.");
-                    functions.HarborB1();
+                    functions.HardwareB1();
                     panel.gameObject.SetActive(false);
                     panel.transform.GetChild(0).GetComponent<Text>().text = "";
                     currentTag = "";
@@ -493,7 +506,7 @@ public class ABHandler : MonoBehaviour
                 else
                 {
                     Debug.Log("Who knows what that guy was up to, especially with all those sharp tools laying about, better to play it safe. You walk to the old employee’s lounge and find some canned goods. You take them hoping the man doesn’t mind.");
-                    functions.HarborB2();
+                    functions.HardwareB2();
                     panel.gameObject.SetActive(false);
                     panel.transform.GetChild(0).GetComponent<Text>().text = "";
                     currentTag = "";
