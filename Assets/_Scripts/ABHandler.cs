@@ -437,7 +437,7 @@ public class ABHandler : MonoBehaviour
                 if (leftChoice)
                 {
                     //Leave House
-                    sceneManager.load("MapShaun");
+                    sceneManager.load("FinalMap");
                     hasBeenOutside = true;
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
@@ -455,8 +455,8 @@ public class ABHandler : MonoBehaviour
             case "House":
                 if (leftChoice)
                 {
-                    //Leave House
-                    sceneManager.load("Gavin_test");
+                    //Enter house
+                    sceneManager.load("FinalHouse");
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
