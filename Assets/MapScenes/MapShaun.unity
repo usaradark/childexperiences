@@ -297,6 +297,7 @@ MonoBehaviour:
     m_Bits: 256
   player: {fileID: 1788330235}
   animator: {fileID: 649812899}
+  ETimeout: 0.5
 --- !u!114 &167701742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,11 +681,7 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1655742464, guid: 00c7321a05ea0b64780c602799e1ae32, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655742464, guid: 00c7321a05ea0b64780c602799e1ae32, type: 3}
+    - target: {fileID: 936032576, guid: 00c7321a05ea0b64780c602799e1ae32, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -692,7 +689,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 936032576, guid: 00c7321a05ea0b64780c602799e1ae32, type: 3}
+    - target: {fileID: 1655742464, guid: 00c7321a05ea0b64780c602799e1ae32, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655742464, guid: 00c7321a05ea0b64780c602799e1ae32, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -1322,6 +1323,7 @@ MonoBehaviour:
     m_Bits: 256
   player: {fileID: 1788330235}
   animator: {fileID: 649812899}
+  ETimeout: 0.5
 --- !u!114 &1052904991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1535,7 +1537,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1131105342, guid: a471d54add842ed4cba129b4f2567abb, type: 3}
       propertyPath: m_Name
-      value: LyndonMapPlayer
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1131105350, guid: a471d54add842ed4cba129b4f2567abb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1986,6 +1988,7 @@ MonoBehaviour:
     m_Bits: 256
   player: {fileID: 1788330235}
   animator: {fileID: 649812899}
+  ETimeout: 0.5
 --- !u!114 &1552624628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2246,6 +2249,7 @@ MonoBehaviour:
     m_Bits: 256
   player: {fileID: 1788330235}
   animator: {fileID: 649812899}
+  ETimeout: 0.5
 --- !u!114 &1919369563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2403,6 +2407,7 @@ MonoBehaviour:
     m_Bits: 256
   player: {fileID: 1788330235}
   animator: {fileID: 649812899}
+  ETimeout: 0.5
 --- !u!114 &1920089213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2665,6 +2670,7 @@ MonoBehaviour:
     m_Bits: 256
   player: {fileID: 1788330235}
   animator: {fileID: 649812899}
+  ETimeout: 0.5
 --- !u!1 &2025629798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3053,6 +3059,7 @@ MonoBehaviour:
     m_Bits: 256
   player: {fileID: 1788330235}
   animator: {fileID: 649812899}
+  ETimeout: 0.5
 --- !u!4 &4100703616302170043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2099172952807560688, guid: e7c34e9feef54ec4c812f4724bd85250,

@@ -32,10 +32,18 @@ public class HighlightedInteractable : MonoBehaviour
     [Header("Animator")]
     public Animator animator;
 
+
+
     #region Monobehavior API;
+
+    private bool EwasPressed;
+    private float timeSinceLastEWasPressed;
+    public float ETimeout;
 
     private void Start()
     {
+        timeSinceLastEWasPressed = 0;
+        EwasPressed = false;
         panel.SetActive(false);
         //interact.gameObject.SetActive(false);
         playerAgent = player.GetComponent<NavMeshAgent>();
@@ -43,6 +51,17 @@ public class HighlightedInteractable : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E) && playerAgent.velocity.magnitude == 0)
+        {
+            EwasPressed = true;
+            timeSinceLastEWasPressed = 0;
+        }
+        timeSinceLastEWasPressed += Time.deltaTime;
+        if (timeSinceLastEWasPressed > ETimeout)
+        {
+            EwasPressed = false;
+            timeSinceLastEWasPressed = 0;
+        }
         float h = playerAgent.velocity.x;
         float v = playerAgent.velocity.z;
         animator.SetFloat("horizontal", h);
@@ -89,7 +108,7 @@ public class HighlightedInteractable : MonoBehaviour
         isInLocation = true;
 
         interact.gameObject.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.E))
+        if (EwasPressed && playerAgent.velocity.magnitude == 0)
         {
             panel.SetActive(true);
 
