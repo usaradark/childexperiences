@@ -46,7 +46,6 @@ public class ABHandler : MonoBehaviour
         panelMainText = panel.transform.GetChild(0).GetComponent<Text>();
         buttonAText = panel.transform.GetChild(1).GetChild(0).GetComponent<Text>();
         buttonBText = panel.transform.GetChild(2).GetChild(0).GetComponent<Text>();
-        panel.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -104,7 +103,7 @@ public class ABHandler : MonoBehaviour
                     }
                     break;
                 case "Hole":
-                    if (smc.myWood > 1 && !smc.holeIsPatched)
+                    if (smc.myWood > 1)
                         panelMainText.text = "Use wood to repair hole?";
                     else
                     {
@@ -139,6 +138,7 @@ public class ABHandler : MonoBehaviour
                 case "Door":
                     if (!hasBeenOutside)
                     {
+                        hasBeenOutside = true;
                         panelMainText.text = "Leave house?";
                     }
                     else
@@ -426,7 +426,7 @@ public class ABHandler : MonoBehaviour
                 if (leftChoice)
                 {
                     //Leave House
-                    sceneManager.load("Map Shaun");
+                    sceneManager.load("Gavin_new 1");
                     hasBeenOutside = true;
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
@@ -720,8 +720,7 @@ public class ABHandler : MonoBehaviour
 
     private void EndGame()
     {
-        sceneManager.load("Game Over");
-        canControl = false;
+        //Call end game script here
     }
 
     public void A()
