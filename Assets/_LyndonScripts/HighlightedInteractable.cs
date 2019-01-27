@@ -110,9 +110,10 @@ public class HighlightedInteractable : MonoBehaviour
         interact.gameObject.SetActive(true);
         if (EwasPressed && playerAgent.velocity.magnitude == 0)
         {
-            panel.SetActive(true);
+            Debug.Log(this.locationName);
 
-            promptLocation.text = locationName;
+            player.GetComponent<ABHandler>().ObjectInteracted(this.locationName);
+            panel.SetActive(true);
         }
     }
 

@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 6490854f56831174580f62ed776fa9f3, type: 2}
+--- !u!1 &12289553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7029810542659767006, guid: d5344532e354aea46913073539ef46b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 483479229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &46492398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -286,7 +292,7 @@ MonoBehaviour:
   isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  panel: {fileID: 2025629798}
+  panel: {fileID: 1759099203}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
@@ -314,7 +320,7 @@ MonoBehaviour:
   badDialogue_1: 
   goodDialogue_2: 
   badDialogue_2: 
-  text: {fileID: 1263433047}
+  text: {fileID: 0}
   option1: {fileID: 825497614}
   option2: {fileID: 300022976}
   panel: {fileID: 2025629798}
@@ -448,11 +454,11 @@ RectTransform:
   m_Children:
   - {fileID: 964111046}
   m_Father: {fileID: 2025629799}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 221, y: -145.90002}
+  m_AnchoredPosition: {x: 221, y: -175.5}
   m_SizeDelta: {x: 308.5, y: 120.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &300022976
@@ -494,7 +500,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 300022977}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1788330243}
+        m_MethodName: B
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &300022977
@@ -534,6 +551,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300022974}
   m_CullTransparentMesh: 0
+--- !u!1001 &483479229
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7029810542659767006, guid: d5344532e354aea46913073539ef46b0,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029810542659767000, guid: d5344532e354aea46913073539ef46b0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029810542659767000, guid: d5344532e354aea46913073539ef46b0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029810542659767000, guid: d5344532e354aea46913073539ef46b0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029810542659767000, guid: d5344532e354aea46913073539ef46b0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029810542659767000, guid: d5344532e354aea46913073539ef46b0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029810542659767000, guid: d5344532e354aea46913073539ef46b0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029810542659767000, guid: d5344532e354aea46913073539ef46b0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029810542659767000, guid: d5344532e354aea46913073539ef46b0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029810542659767000, guid: d5344532e354aea46913073539ef46b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029810542659767000, guid: d5344532e354aea46913073539ef46b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029810542659767000, guid: d5344532e354aea46913073539ef46b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5344532e354aea46913073539ef46b0, type: 3}
 --- !u!1001 &544666397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -774,7 +860,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1027,11 +1113,11 @@ RectTransform:
   m_Children:
   - {fileID: 1962445565}
   m_Father: {fileID: 2025629799}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -215, y: -145.90002}
+  m_AnchoredPosition: {x: -215, y: -175.5}
   m_SizeDelta: {x: 308.5, y: 120.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &825497614
@@ -1073,7 +1159,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 825497615}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1788330243}
+        m_MethodName: A
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &825497615
@@ -1312,7 +1409,7 @@ MonoBehaviour:
   isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  panel: {fileID: 2025629798}
+  panel: {fileID: 1759099203}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
@@ -1340,7 +1437,7 @@ MonoBehaviour:
   badDialogue_1: 
   goodDialogue_2: 
   badDialogue_2: 
-  text: {fileID: 1263433047}
+  text: {fileID: 0}
   option1: {fileID: 825497614}
   option2: {fileID: 300022976}
   panel: {fileID: 2025629798}
@@ -1449,85 +1546,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7c34e9feef54ec4c812f4724bd85250, type: 3}
---- !u!1 &1263433046
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1263433049}
-  - component: {fileID: 1263433048}
-  - component: {fileID: 1263433047}
-  m_Layer: 5
-  m_Name: underText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1263433047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263433046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 45
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 72
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Text
---- !u!222 &1263433048
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263433046}
-  m_CullTransparentMesh: 0
---- !u!224 &1263433049
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263433046}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2025629799}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000024796, y: 30}
-  m_SizeDelta: {x: 1405.7, y: 154.6}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1338150332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1630,6 +1648,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1385476221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5086555123524223532, guid: e367b17c511f0b64bbba4746acae802e,
+    type: 3}
+  m_PrefabInstance: {fileID: 46492398}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1406677719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,12 +2001,12 @@ MonoBehaviour:
   isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  panel: {fileID: 2025629798}
+  panel: {fileID: 1759099203}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
   dia_opt: {fileID: 1552624628}
-  locationName: Beach
+  locationName: Harbor
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -2005,7 +2029,7 @@ MonoBehaviour:
   badDialogue_1: 
   goodDialogue_2: 
   badDialogue_2: 
-  text: {fileID: 1263433047}
+  text: {fileID: 0}
   option1: {fileID: 825497614}
   option2: {fileID: 300022976}
   panel: {fileID: 2025629798}
@@ -2021,6 +2045,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 544666397}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1759099203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6731457962477758734, guid: 00c7321a05ea0b64780c602799e1ae32,
+    type: 3}
+  m_PrefabInstance: {fileID: 544666397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1788330235 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1131105342, guid: a471d54add842ed4cba129b4f2567abb,
@@ -2033,6 +2063,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1338150332}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1788330243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788330235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088e45959b5ceae48a126872987d46fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinFlipHeads: 0
+  gameOver: 0
+  momDead: 0
+  eventHandler: {fileID: 1385476221}
+  statManager: {fileID: 1865836059}
+  panel: {fileID: 2025629798}
+  sceneHandler: {fileID: 12289553}
+  canControl: 0
+  currentTag: 
+  ETimeout: 0.5
 --- !u!1001 &1830947611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2172,8 +2224,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36, y: 185.09998}
-  m_SizeDelta: {x: 323.2, y: 88.7}
+  m_AnchoredPosition: {x: 36, y: -10}
+  m_SizeDelta: {x: 1374.86, y: 88.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1896278178
 MonoBehaviour:
@@ -2197,16 +2249,16 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 72
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 72
-    m_Alignment: 0
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Location
 --- !u!222 &1896278179
@@ -2238,7 +2290,7 @@ MonoBehaviour:
   isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  panel: {fileID: 2025629798}
+  panel: {fileID: 1759099203}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
@@ -2266,7 +2318,7 @@ MonoBehaviour:
   badDialogue_1: 
   goodDialogue_2: 
   badDialogue_2: 
-  text: {fileID: 1263433047}
+  text: {fileID: 0}
   option1: {fileID: 825497614}
   option2: {fileID: 300022976}
   panel: {fileID: 2025629798}
@@ -2396,12 +2448,12 @@ MonoBehaviour:
   isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  panel: {fileID: 2025629798}
+  panel: {fileID: 1759099203}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
   dia_opt: {fileID: 1920089213}
-  locationName: Hardware Store
+  locationName: Hardware
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -2424,7 +2476,7 @@ MonoBehaviour:
   badDialogue_1: 
   goodDialogue_2: 
   badDialogue_2: 
-  text: {fileID: 1263433047}
+  text: {fileID: 0}
   option1: {fileID: 825497614}
   option2: {fileID: 300022976}
   panel: {fileID: 2025629798}
@@ -2640,7 +2692,7 @@ MonoBehaviour:
   badDialogue_1: 
   goodDialogue_2: 
   badDialogue_2: 
-  text: {fileID: 1263433047}
+  text: {fileID: 0}
   option1: {fileID: 825497614}
   option2: {fileID: 300022976}
   panel: {fileID: 2025629798}
@@ -2659,12 +2711,12 @@ MonoBehaviour:
   isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  panel: {fileID: 2025629798}
+  panel: {fileID: 1759099203}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
   dia_opt: {fileID: 1977662716}
-  locationName: Beach
+  locationName: Church
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -2701,7 +2753,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1896278177}
-  - {fileID: 1263433049}
   - {fileID: 825497613}
   - {fileID: 300022975}
   m_Father: {fileID: 575602796}
@@ -3048,7 +3099,7 @@ MonoBehaviour:
   isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  panel: {fileID: 2025629798}
+  panel: {fileID: 1759099203}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
@@ -3082,7 +3133,7 @@ MonoBehaviour:
   badDialogue_1: bd1
   goodDialogue_2: gd2
   badDialogue_2: bg2
-  text: {fileID: 1263433047}
+  text: {fileID: 0}
   option1: {fileID: 825497614}
   option2: {fileID: 300022976}
   panel: {fileID: 2025629798}
