@@ -40,6 +40,7 @@ public class ABHandler : MonoBehaviour
         panelMainText = panel.transform.GetChild(0).GetComponent<Text>();
         buttonAText = panel.transform.GetChild(1).GetChild(0).GetComponent<Text>();
         buttonBText = panel.transform.GetChild(2).GetChild(0).GetComponent<Text>();
+        panel.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
