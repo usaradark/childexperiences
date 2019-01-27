@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneInteract : MonoBehaviour
+
 {
     public GameObject[] persistantObjects;
     private void Awake()

@@ -39,6 +39,7 @@ public class ABHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        statManager = GameObject.Find("StatsManager");
         timeSinceLastEWasPressed = 0;
         EwasPressed = false;
         functions = eventHandler.GetComponent<EventFunctions>();
@@ -460,7 +461,7 @@ public class ABHandler : MonoBehaviour
             case "House":
                 if (leftChoice)
                 {
-                    //Enter house
+
                     sceneManager.load("FinalHouse");
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
