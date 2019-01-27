@@ -61,6 +61,7 @@ public class ABHandler : MonoBehaviour
             currentTag = collider.gameObject.tag;
             switch (currentTag)
             {
+                //ADD CHECKS TO INV BEFORE FINAL TEST
                 case "Stove":
                     panel.transform.GetChild(0).GetComponent<Text>().text = "Make Food?";
                     break;
@@ -73,6 +74,9 @@ public class ABHandler : MonoBehaviour
                 case "Fire":
                     panel.transform.GetChild(0).GetComponent<Text>().text = "Use wood to make Fire?";
                     break;
+                case "Door":
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "Leave house?";
+                    break;
             }
         }
     }
@@ -84,6 +88,7 @@ public class ABHandler : MonoBehaviour
             case "Stove":
                 if (leftChoice)
                 {
+                    //Who to give food to?
                     currentTag = "Stove2";
                     panel.transform.GetChild(0).GetComponent<Text>().text = "Feed Mom or Yourself?";
                 }
@@ -99,11 +104,12 @@ public class ABHandler : MonoBehaviour
             case "Stove2":
                 if (leftChoice)
                 {
+                    //Give food to mom
                     functions.MomEatFood();
                 }
                 else
                 {
-
+                    //Give food to self
                     functions.SelfEatFood();
                 }
                 canControl = true;
@@ -111,24 +117,6 @@ public class ABHandler : MonoBehaviour
                 panel.transform.GetChild(0).GetComponent<Text>().text = "";
                 currentTag = "";
                 break;
-
-            /*case "Stove3":
-                if (leftChoice)
-                {
-                    panel.gameObject.SetActive(false);
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "";
-                    currentTag = "";
-                    canControl = true;
-                }
-                else
-                {
-                    panel.gameObject.SetActive(false);
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "";
-                    currentTag = "";
-                    canControl = true;
-                }
-
-                break;*/
 
             case "Hole":
                 if(leftChoice)
@@ -149,7 +137,76 @@ public class ABHandler : MonoBehaviour
                 }
                 break;
 
+            case "Med Cabinet":
+                if (leftChoice)
+                {
+                    //Who to give medicine to?
+                    currentTag = "Med Cabinet 2";
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "Heal Mom or Yourself?";
+                }
+                else
+                {
+                    panel.gameObject.SetActive(false);
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                    currentTag = "";
+                    canControl = true;
+                }
+                break;
 
+            case "Med Cabinet 2":
+                if (leftChoice)
+                {
+                    //Give medicine to mom
+                    functions.MomTakeMedicine();
+                }
+                else
+                {
+                    //Give medicine to self
+                    functions.SelfTakeMedicine();
+                }
+                canControl = true;
+                panel.gameObject.SetActive(false);
+                panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                currentTag = "";
+                break;
+
+            case "Fire":
+                if (leftChoice)
+                {
+                    //make the fire
+                    functions.CreateFire();
+                    panel.gameObject.SetActive(false);
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                    currentTag = "";
+                    canControl = true;
+                }
+                else
+                {
+                    panel.gameObject.SetActive(false);
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                    currentTag = "";
+                    canControl = true;
+                }
+                break;
+
+            case "Door":
+                if (leftChoice)
+                {
+                    //Leave House
+                    //function to leave house called here
+                    panel.gameObject.SetActive(false);
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                    currentTag = "";
+                    canControl = true;
+                }
+                else
+                {
+                    panel.gameObject.SetActive(false);
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                    currentTag = "";
+                    canControl = true;
+                }
+                break;
         }
 
     }
