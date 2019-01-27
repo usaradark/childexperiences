@@ -684,7 +684,8 @@ public class ABHandler : MonoBehaviour
 
     private void EndGame()
     {
-        //Call end game script here
+        sceneManager.load("Game Over");
+        canControl = false;
     }
 
     public void A()
