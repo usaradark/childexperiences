@@ -764,6 +764,11 @@ public class ABHandler : MonoBehaviour
     {
         panelOkText.text = "";
         okPanel.SetActive(false);
+        if(GameObject.Find("Stove") == null)
+        {
+            sceneManager.load("FinalHouse");
+        }
+
         canControl = true;
     }
 }
