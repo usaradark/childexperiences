@@ -21,7 +21,7 @@ public class ClampName : MonoBehaviour
 
         Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
         //Vector3 namePos = this.transform.position;
-        Debug.Log(namePos);
+        //Debug.Log(namePos);
 
         if (this.GetComponentInParent<NavMeshAgent>().velocity.magnitude == 0)
         {

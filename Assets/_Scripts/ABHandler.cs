@@ -74,8 +74,8 @@ public class ABHandler : MonoBehaviour
             
     }
 
-    private void OnTriggerStay(Collider collider)
-    {
+    public void ObjectInteracted(string tag)
+    { 
         if (EwasPressed && canControl)
         {
             //Debug.Log("E pressed in Stay");
@@ -89,7 +89,7 @@ public class ABHandler : MonoBehaviour
             }
             canControl = false;
             panel.gameObject.SetActive(true);
-            currentTag = collider.gameObject.tag;
+            currentTag = tag;
             string msg = "";
             switch (currentTag)
             {
@@ -227,6 +227,7 @@ public class ABHandler : MonoBehaviour
                 //outdoor
 //Hardware
                 case "Hardware":
+                    Debug.Log("HardwareABCase");
                     if (coinFlipHeads)
                     {
                         currentTag = "HardwareA";
@@ -279,6 +280,11 @@ public class ABHandler : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerStay(Collider collider)
+    {
+        ObjectInteracted(collider.tag);
+    } 
 
     public void OperateOnTag(string tag)
     {
