@@ -29,9 +29,15 @@ public class ABHandler : MonoBehaviour
 
     bool leftChoice = true;
 
+    private bool EwasPressed;
+    private float timeSinceLastEWasPressed;
+    public float ETimeout;
+
     // Start is called before the first frame update
     void Start()
     {
+        timeSinceLastEWasPressed = 0;
+        EwasPressed = false;
         functions = eventHandler.GetComponent<EventFunctions>();
         smc = statManager.GetComponent<StatsManagerController>();
         canControl = true;
@@ -46,6 +52,17 @@ public class ABHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.E) && canControl)
+        {
+            EwasPressed = true;
+            timeSinceLastEWasPressed = 0;
+        }
+        timeSinceLastEWasPressed += Time.deltaTime;
+        if(timeSinceLastEWasPressed > ETimeout)
+        {
+            EwasPressed = false;
+            timeSinceLastEWasPressed = 0;
+        }
         if (gameOver)
         {
             EndGame();
@@ -55,7 +72,7 @@ public class ABHandler : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        if (Input.GetKeyDown(KeyCode.E) && canControl)
+        if (EwasPressed && canControl)
         {
             //Debug.Log("E pressed in Stay");
             if(Random.Range(0, 2) == 1)
