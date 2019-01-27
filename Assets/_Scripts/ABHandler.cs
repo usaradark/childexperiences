@@ -8,6 +8,7 @@ public class ABHandler : MonoBehaviour
     public bool coinFlipHeads;
     public bool gameOver;
     public bool momDead;
+    public bool gameWon;
     public GameObject eventHandler;
     public GameObject statManager;
     public GameObject panel;
@@ -71,7 +72,11 @@ public class ABHandler : MonoBehaviour
         {
             EndGame();
         }
-            
+        
+        if (gameWon)
+        {
+            WinGame();
+        }
     }
 
     public void ObjectInteracted(string tag)
@@ -714,6 +719,10 @@ public class ABHandler : MonoBehaviour
         }
         functions.UpdateAll();
         CheckForDeaths();
+        if (smc.myDays >= 6)
+        {
+            gameWon = true;
+        }
     }
 
     private void CheckForDeaths()
@@ -730,7 +739,12 @@ public class ABHandler : MonoBehaviour
 
     private void EndGame()
     {
-        //Call end game script here
+        sceneManager.load("Game Over");
+    }
+
+    private void WinGame()
+    {
+
     }
 
     public void A()
