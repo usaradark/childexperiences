@@ -60,11 +60,21 @@ public class ABHandler : MonoBehaviour
             canControl = false;
             panel.gameObject.SetActive(true);
             currentTag = collider.gameObject.tag;
-
-            //OperateOnTag(collider.gameObject.tag);
-
-            //print(panel.transform.GetChild(0).GetComponent<Text>().text);
-
+            switch (currentTag)
+            {
+                case "Stove":
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "Make Food?";
+                    break;
+                case "Hole":
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "Use wood to repair hole?";
+                    break;
+                case "Med Cabinet":
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "Use medicine?";
+                    break;
+                case "Fire":
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "Use wood to make Fire?";
+                    break;
+            }
         }
     }
 
@@ -76,9 +86,7 @@ public class ABHandler : MonoBehaviour
                 if (leftChoice)
                 {
                     currentTag = "Stove2";
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "STOVE2";
-                    //new stove
-                    Debug.Log("STOVE2");
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "Feed Mom or Yourself?";
                 }
                 else
                 {
@@ -92,20 +100,20 @@ public class ABHandler : MonoBehaviour
             case "Stove2":
                 if (leftChoice)
                 {
-                    currentTag = "Stove3";
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "STOVE3";
-                    Debug.Log("STOVE3");
+                    functions.MomEatFood();
                 }
                 else
                 {
-                    panel.gameObject.SetActive(false);
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "";
-                    currentTag = "";
-                    canControl = true;
+
+                    functions.SelfEatFood();
                 }
+                canControl = true;
+                panel.gameObject.SetActive(false);
+                panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                currentTag = "";
                 break;
 
-            case "Stove3":
+            /*case "Stove3":
                 if (leftChoice)
                 {
                     panel.gameObject.SetActive(false);
@@ -121,7 +129,7 @@ public class ABHandler : MonoBehaviour
                     canControl = true;
                 }
 
-                break;
+                break;*/
 
 
         }
