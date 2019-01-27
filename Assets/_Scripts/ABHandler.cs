@@ -70,15 +70,38 @@ public class ABHandler : MonoBehaviour
             string msg = "";
             switch (currentTag)
             {
-                //ADD CHECKS TO INV BEFORE FINAL TEST
                 case "Stove":
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "Make Food?";
+                    if (smc.myFood > 0)
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "Make Food?";
+                    else
+                    {
+                        panel.SetActive(false);
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                        currentTag = "";
+                        canControl = true;
+                    }
                     break;
                 case "Hole":
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "Use wood to repair hole?";
+                    if (smc.myWood > 0)
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "Use wood to repair hole?";
+                    else
+                    {
+                        panel.SetActive(false);
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                        currentTag = "";
+                        canControl = true;
+                    }
                     break;
                 case "Med Cabinet":
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "Use medicine?";
+                    if (smc.myMedicine > 0)
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "Use medicine?";
+                    else
+                    {
+                        panel.SetActive(false);
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                        currentTag = "";
+                        canControl = true;
+                    }
                     break;
                 case "Fire":
                     panel.transform.GetChild(0).GetComponent<Text>().text = "Use wood to make Fire?";
