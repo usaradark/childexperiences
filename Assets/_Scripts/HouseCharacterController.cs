@@ -11,14 +11,12 @@ public class HouseCharacterController : MonoBehaviour
 
     private CharacterController myController;
     private HouseManagerController houseController;
-<<<<<<< HEAD
+
     private StatsManagerController smc;
     private bool waiting;
-=======
 
     public GameObject panel;
 
->>>>>>> 6d10b39adec248404b4f965270def3aa1517fdba
     // Start is called before the first frame update
     void Start()
     {
@@ -58,27 +56,6 @@ public class HouseCharacterController : MonoBehaviour
                     panel.transform.GetChild(0).GetComponent<Text>().text = "Leave?";
                     break;
                 case "Stove":
-<<<<<<< HEAD
-                    if (smc.myFood > 0)
-                    {
-                        Debug.Log("Make food?");
-                        waiting = true;
-                    }
-                    break;
-                case "Hole":
-                    if (smc.myWood > 0)
-                    {
-                        Debug.Log("Repairing house");
-                        houseController.RepairHouse();
-                    }
-                    break;
-                case "Fireplace":
-                    if (smc.myWood > 0)
-                    {
-                        Debug.Log("Building fire");
-                        houseController.BuildFire();
-                    }
-=======
                     //Debug.Log("Make food?");
                     panel.transform.GetChild(0).GetComponent<Text>().text = "Make food?";
                     break;
@@ -91,7 +68,6 @@ public class HouseCharacterController : MonoBehaviour
                     //Debug.Log("Build fire?");
                     panel.transform.GetChild(0).GetComponent<Text>().text = "Build Fire?";
                     houseController.BuildFire();
->>>>>>> 6d10b39adec248404b4f965270def3aa1517fdba
                     break;
             }
         }

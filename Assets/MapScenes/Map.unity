@@ -132,17 +132,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  prompt: {fileID: 575602795}
+  panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   dia_opt: {fileID: 0}
   locationName: Store
   Option1: {fileID: 825497614}
   Option2: {fileID: 300022976}
-  buttonManager: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  playerAgent: {fileID: 1131105343}
+  player: {fileID: 1131105342}
   locations:
   - {fileID: 167701740}
   - {fileID: 4100703616302170038}
@@ -150,6 +149,7 @@ MonoBehaviour:
   - {fileID: 1052904989}
   - {fileID: 1919369561}
   - {fileID: 1552624626}
+  point: {x: 0, y: 0, z: 0}
 --- !u!114 &167701742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,17 +307,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300022974}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 964111046}
-  m_Father: {fileID: 575602796}
-  m_RootOrder: 4
+  m_Father: {fileID: 2025629799}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 221, y: -432}
+  m_AnchoredPosition: {x: 221, y: -145.90002}
   m_SizeDelta: {x: 308.5, y: 120.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &300022976
@@ -428,7 +428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &575602793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,11 +501,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2025629799}
-  - {fileID: 1896278177}
-  - {fileID: 1263433049}
-  - {fileID: 825497613}
-  - {fileID: 300022975}
-  - {fileID: 1220506997}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -636,17 +631,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825497612}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1962445565}
-  m_Father: {fileID: 575602796}
-  m_RootOrder: 3
+  m_Father: {fileID: 2025629799}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -215, y: -432}
+  m_AnchoredPosition: {x: -215, y: -145.90002}
   m_SizeDelta: {x: 308.5, y: 120.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &825497614
@@ -917,17 +912,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  prompt: {fileID: 575602795}
+  panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   dia_opt: {fileID: 0}
   locationName: Forest
   Option1: {fileID: 825497614}
   Option2: {fileID: 300022976}
-  buttonManager: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  playerAgent: {fileID: 1131105343}
+  player: {fileID: 1131105342}
   locations:
   - {fileID: 167701740}
   - {fileID: 4100703616302170038}
@@ -935,6 +929,7 @@ MonoBehaviour:
   - {fileID: 1052904989}
   - {fileID: 1919369561}
   - {fileID: 1552624626}
+  point: {x: 0, y: 0, z: 0}
 --- !u!114 &1052904991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,17 +1118,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220506996}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1492273796}
-  m_Father: {fileID: 575602796}
-  m_RootOrder: 5
+  m_Father: {fileID: 2025629799}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 770.9, y: -453.8}
+  m_AnchoredPosition: {x: 770.9, y: -167.70001}
   m_SizeDelta: {x: 188.7, y: 76.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1220506998
@@ -1282,16 +1277,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263433046}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 575602796}
-  m_RootOrder: 2
+  m_Father: {fileID: 2025629799}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.325012, y: -261.45}
+  m_AnchoredPosition: {x: 17.325012, y: 24.649963}
   m_SizeDelta: {x: 715.85, y: 154.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1368188068
@@ -1660,17 +1655,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  prompt: {fileID: 575602795}
+  panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   dia_opt: {fileID: 0}
   locationName: Beach
   Option1: {fileID: 825497614}
   Option2: {fileID: 300022976}
-  buttonManager: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  playerAgent: {fileID: 1131105343}
+  player: {fileID: 1131105342}
   locations:
   - {fileID: 167701740}
   - {fileID: 4100703616302170038}
@@ -1678,6 +1672,7 @@ MonoBehaviour:
   - {fileID: 1052904989}
   - {fileID: 1919369561}
   - {fileID: 1552624626}
+  point: {x: 0, y: 0, z: 0}
 --- !u!114 &1552624628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1821,16 +1816,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896278176}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 575602796}
-  m_RootOrder: 1
+  m_Father: {fileID: 2025629799}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36, y: -101}
+  m_AnchoredPosition: {x: 36, y: 185.09998}
   m_SizeDelta: {x: 323.2, y: 88.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1896278178
@@ -1895,17 +1890,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  prompt: {fileID: 575602795}
+  panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   dia_opt: {fileID: 0}
   locationName: Hospital
   Option1: {fileID: 825497614}
   Option2: {fileID: 300022976}
-  buttonManager: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  playerAgent: {fileID: 1131105343}
+  player: {fileID: 1131105342}
   locations:
   - {fileID: 167701740}
   - {fileID: 4100703616302170038}
@@ -1913,6 +1907,7 @@ MonoBehaviour:
   - {fileID: 1052904989}
   - {fileID: 1919369561}
   - {fileID: 1552624626}
+  point: {x: 0, y: 0, z: 0}
 --- !u!114 &1919369563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2051,17 +2046,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  prompt: {fileID: 575602795}
+  panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   dia_opt: {fileID: 0}
   locationName: Hardware Store
   Option1: {fileID: 825497614}
   Option2: {fileID: 300022976}
-  buttonManager: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  playerAgent: {fileID: 1131105343}
+  player: {fileID: 1131105342}
   locations:
   - {fileID: 167701740}
   - {fileID: 4100703616302170038}
@@ -2069,6 +2063,7 @@ MonoBehaviour:
   - {fileID: 1052904989}
   - {fileID: 1919369561}
   - {fileID: 1552624626}
+  point: {x: 0, y: 0, z: 0}
 --- !u!114 &1920089213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,7 +2199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2025629799
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2215,7 +2210,12 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1896278177}
+  - {fileID: 1263433049}
+  - {fileID: 825497613}
+  - {fileID: 300022975}
+  - {fileID: 1220506997}
   m_Father: {fileID: 575602796}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2439,17 +2439,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
-  prompt: {fileID: 575602795}
+  panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   dia_opt: {fileID: 4100703616302170044}
   locationName: House
   Option1: {fileID: 825497614}
   Option2: {fileID: 300022976}
-  buttonManager: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  playerAgent: {fileID: 1131105343}
+  player: {fileID: 1131105342}
   locations:
   - {fileID: 167701740}
   - {fileID: 4100703616302170038}
@@ -2457,6 +2456,7 @@ MonoBehaviour:
   - {fileID: 1052904989}
   - {fileID: 1919369561}
   - {fileID: 1552624626}
+  point: {x: 0, y: 0, z: 0}
 --- !u!136 &4100703616302170040
 CapsuleCollider:
   m_ObjectHideFlags: 0
