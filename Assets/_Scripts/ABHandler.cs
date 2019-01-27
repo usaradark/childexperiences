@@ -745,7 +745,10 @@ public class ABHandler : MonoBehaviour
 
     private void WinGame()
     {
-
+        if (momDead)
+            sceneManager.load("BadEnd");
+        else
+            sceneManager.load("GoodEnd");
     }
 
     public void A()
