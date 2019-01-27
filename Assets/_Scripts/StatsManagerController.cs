@@ -37,17 +37,26 @@ public class StatsManagerController : MonoBehaviour
     //Update player HP by delta
     public void UpdatePlayerHP(float delta)
     {
-        playerHP += delta;
+        if (playerHP + delta <= 100)
+            playerHP += delta;
+        else
+            playerHP = 100;
         UpdateUI();
     }
     public void UpdateMomHP(float delta)
     {
-        momHP += delta;
+        if (momHP + delta <= 100)
+            momHP += delta;
+        else
+            momHP = 100;
         UpdateUI();
     }
     public void UpdateShelterHP(float delta)
     {
-        shelterHP += delta;
+        if (shelterHP + delta <= 200)
+            shelterHP += delta;
+        else
+            shelterHP = 200;
         UpdateUI();
     }
 
