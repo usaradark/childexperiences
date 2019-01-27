@@ -87,7 +87,7 @@ public class ABHandler : MonoBehaviour
                     }
                     break;
                 case "Hole":
-                    if (smc.myWood > 1)
+                    if (smc.myWood > 1 && !smc.holeIsPatched)
                         panelMainText.text = "Use wood to repair hole?";
                     else
                     {

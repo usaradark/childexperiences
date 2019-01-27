@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Gavin_new 1.unity
     guid: 27e1b1410f0389b438ec8805c8f2005f
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: b14e046a6830de14c9491892edc7d336
   m_configObjects: {}
