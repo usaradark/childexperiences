@@ -10,6 +10,9 @@ TagManager:
   - Location
   - Ignore
   - Stove
+  - Grocery
+  - Forest
+  - Hardware
   layers:
   - Default
   - TransparentFX
