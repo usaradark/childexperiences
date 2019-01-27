@@ -21,9 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Over.unity
     guid: b14e046a6830de14c9491892edc7d336
   - enabled: 1
-    path: Assets/Scenes/Gavin_test.unity
+    path: Assets/Scenes/FinalHouse.unity
     guid: 234f93664e5f0ac4db6dd655fee54e8e
   - enabled: 1
-    path: Assets/MapScenes/MapShaun.unity
+    path: Assets/Scenes/FinalMap.unity
     guid: 21b8e9ca7a5ca9b40b2cabb5ae9b44a6
   m_configObjects: {}
