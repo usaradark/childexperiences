@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class ABHandler : MonoBehaviour
 {
     public bool coinFlipHeads;
-    //public float charaSpeed;
+    public bool gameOver;
+    public bool momDead;
     public GameObject eventHandler;
     public GameObject statManager;
     public GameObject panel;
@@ -15,11 +16,9 @@ public class ABHandler : MonoBehaviour
     private Text buttonAText;
     private Text buttonBText;
 
-    //private CharacterController myController;
     private EventFunctions functions;
 
     private StatsManagerController smc;
-    private string currentTrigger;
     private bool hasBeenOutside;
 
     public bool canControl;
@@ -31,10 +30,8 @@ public class ABHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //myController = GetComponent<CharacterController>();
         functions = eventHandler.GetComponent<EventFunctions>();
         smc = statManager.GetComponent<StatsManagerController>();
-        currentTrigger = "";
         canControl = true;
         hasBeenOutside = false;
         panelMainText = panel.transform.GetChild(0).GetComponent<Text>();
@@ -271,20 +268,35 @@ public class ABHandler : MonoBehaviour
                 canControl = true;
                 break;
             case "Stove":
-                if (leftChoice)
+                if (!momDead)
                 {
-                    //Who to give food to?
-                    currentTag = "Stove2";
-                    panelMainText.text = "Feed Mom or Yourself?";
-                    buttonAText.text = "Feed Mom";
-                    buttonBText.text = "Feed Yourself";
+                    if (leftChoice)
+                    {
+                        //Who to give food to?
+                        currentTag = "Stove2";
+                        panelMainText.text = "Feed Mom or Yourself?";
+                        buttonAText.text = "Feed Mom";
+                        buttonBText.text = "Feed Yourself";
+                    }
+                    else
+                    {
+                        panel.gameObject.SetActive(false);
+                        panelMainText.text = "";
+                        currentTag = "";
+                        canControl = true;
+                    }
                 }
                 else
                 {
+                    if (leftChoice)
+                    {
+                        //Give food to self
+                        functions.SelfEatFood();
+                    }
+                    canControl = true;
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 break;
 
@@ -320,20 +332,35 @@ public class ABHandler : MonoBehaviour
                 break;
 
             case "Med Cabinet":
-                if (leftChoice)
+                if (!momDead)
                 {
-                    //Who to give medicine to?
-                    currentTag = "Med Cabinet 2";
-                    panelMainText.text = "Heal Mom or Yourself?\nCan only heal each once per Day";
-                    buttonAText.text = "Heal Mom";
-                    buttonBText.text = "Heal Yourself";
+                    if (leftChoice)
+                    {
+                        //Who to give medicine to?
+                        currentTag = "Med Cabinet 2";
+                        panelMainText.text = "Heal Mom or Yourself?\nCan only heal each once per Day";
+                        buttonAText.text = "Heal Mom";
+                        buttonBText.text = "Heal Yourself";
+                    }
+                    else
+                    {
+                        panel.gameObject.SetActive(false);
+                        panelMainText.text = "";
+                        currentTag = "";
+                        canControl = true;
+                    }
                 }
                 else
                 {
+                    if (leftChoice)
+                    {
+                        //Give medicine to self
+                        functions.SelfTakeMedicine();
+                    }
+                    canControl = true;
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 break;
 
@@ -630,6 +657,19 @@ public class ABHandler : MonoBehaviour
                 break;
         }
         functions.UpdateAll();
+        CheckForDeaths();
+    }
+
+    private void CheckForDeaths()
+    {
+        if (smc.playerHP <= 0 || smc.shelterHP <= 0)
+        {
+            gameOver = true;
+        }
+        else if (smc.momHP < 0)
+        {
+            momDead = true;
+        }
     }
 
     public void A()
