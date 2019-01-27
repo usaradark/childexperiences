@@ -10,6 +10,9 @@ TagManager:
   - Location
   - Ignore
   - Stove
+  - Church
+  - Harbor
+  - Hospital
   layers:
   - Default
   - TransparentFX
