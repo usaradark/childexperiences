@@ -235,6 +235,66 @@ public class EventFunctions : MonoBehaviour
         deltaMomHealthDecreaseRate = .5f;
     }
 
+    public void HeavyRain()
+    {
+        ZeroAll();
+        deltaSelfHealth = -10;
+        deltaMomHealth = -10;
+    }
+
+    public void SnowStorm()
+    {
+        ZeroAll();
+        if (existingValues.fireIsLit)
+        {
+            
+        }
+        else
+        {
+            deltaShelterHealth = -20;
+        }
+
+    }
+
+
+
+    public void MomExtraSick()
+    {
+        ZeroAll();
+        if(existingValues.fireIsLit == true)
+        {
+
+        }
+        else
+        {
+            deltaMomHealth = -10;
+        }
+    }
+
+    public void Burglar()
+    {
+        ZeroAll();
+        if(existingValues.holeIsPatched)
+        {
+            
+        }
+        else
+        {
+            deltaFood = -1;
+            deltaMedicine = -1;
+        }
+    }
+
+    public void Nomads()
+    {
+        ZeroAll();
+        deltaFood = 1;
+    }
+
+    public void QuietNight()
+    {
+        ZeroAll();
+    }
     // Start is called before the first frame update
     void Start()
     {
