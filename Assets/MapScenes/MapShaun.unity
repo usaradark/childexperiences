@@ -680,7 +680,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 936032576, guid: 00c7321a05ea0b64780c602799e1ae32, type: 3}
+    - target: {fileID: 1655742464, guid: 00c7321a05ea0b64780c602799e1ae32, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655742464, guid: 00c7321a05ea0b64780c602799e1ae32, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -688,11 +692,7 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1655742464, guid: 00c7321a05ea0b64780c602799e1ae32, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655742464, guid: 00c7321a05ea0b64780c602799e1ae32, type: 3}
+    - target: {fileID: 936032576, guid: 00c7321a05ea0b64780c602799e1ae32, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -2859,7 +2859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2101509739
 RectTransform:
   m_ObjectHideFlags: 0

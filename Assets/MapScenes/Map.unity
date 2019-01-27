@@ -130,11 +130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 1531238912}
+  interText: {fileID: 0}
   dia_opt: {fileID: 167701742}
   locationName: Store
   groundLayer:
@@ -971,11 +973,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 1531238912}
+  interText: {fileID: 0}
   dia_opt: {fileID: 1052904991}
   locationName: Forest
   groundLayer:
@@ -1421,6 +1425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17b0d9a6048524499038eb4006a0b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interText: {fileID: 1531238911}
   nameLabel: {fileID: 1531238912}
 --- !u!135 &1527113396
 SphereCollider:
@@ -1577,11 +1582,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 1531238912}
+  interText: {fileID: 0}
   dia_opt: {fileID: 1552624628}
   locationName: Beach
   groundLayer:
@@ -1811,11 +1818,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 1531238912}
+  interText: {fileID: 0}
   dia_opt: {fileID: 1919369563}
   locationName: Hospital
   groundLayer:
@@ -1966,11 +1975,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 1531238912}
+  interText: {fileID: 0}
   dia_opt: {fileID: 1920089213}
   locationName: Hardware Store
   groundLayer:
@@ -2147,11 +2158,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 1531238912}
+  interText: {fileID: 0}
   dia_opt: {fileID: 1977662716}
   locationName: Beach
   groundLayer:
@@ -2495,11 +2508,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
   interact: {fileID: 1531238912}
+  interText: {fileID: 0}
   dia_opt: {fileID: 4100703616302170044}
   locationName: House
   groundLayer:
