@@ -122,7 +122,6 @@ public class ABHandler : MonoBehaviour
                 case "Door":
                     if (!hasBeenOutside)
                     {
-                        hasBeenOutside = true;
                         panelMainText.text = "Leave house?";
                     }
                     else
@@ -409,7 +408,7 @@ public class ABHandler : MonoBehaviour
                 if (leftChoice)
                 {
                     //Leave House
-                    sceneManager.load("Gavin_new 1");
+                    sceneManager.load("Map Shaun");
                     hasBeenOutside = true;
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
