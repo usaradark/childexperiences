@@ -6,21 +6,28 @@ public class HouseCharacterController : MonoBehaviour
 {
     public float charaSpeed;
     public GameObject houseManager;
+    public GameObject statManager;
 
     private CharacterController myController;
     private HouseManagerController houseController;
-    
+    private StatsManagerController smc;
+    private bool waiting;
     // Start is called before the first frame update
     void Start()
     {
         myController = GetComponent<CharacterController>();
         houseController = houseManager.GetComponent<HouseManagerController>();
+        smc = statManager.GetComponent<StatsManagerController>();
+        waiting = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
+        if (!waiting)
+        {
+            MovePlayer();
+        }
     }
 
     private void MovePlayer()
@@ -33,7 +40,7 @@ public class HouseCharacterController : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !waiting)
         {
             switch (collider.tag)
             {
@@ -41,15 +48,25 @@ public class HouseCharacterController : MonoBehaviour
                     Debug.Log("Leave?");
                     break;
                 case "Stove":
-                    Debug.Log("Make food?");
+                    if (smc.myFood > 0)
+                    {
+                        Debug.Log("Make food?");
+                        waiting = true;
+                    }
                     break;
                 case "Hole":
-                    Debug.Log("Repairing house");
-                    houseController.RepairHouse();
+                    if (smc.myWood > 0)
+                    {
+                        Debug.Log("Repairing house");
+                        houseController.RepairHouse();
+                    }
                     break;
                 case "Fireplace":
-                    Debug.Log("Build fire?");
-                    houseController.BuildFire();
+                    if (smc.myWood > 0)
+                    {
+                        Debug.Log("Building fire");
+                        houseController.BuildFire();
+                    }
                     break;
             }
         }
