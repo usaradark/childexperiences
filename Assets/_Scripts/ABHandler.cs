@@ -6,20 +6,21 @@ using UnityEngine.UI;
 public class ABHandler : MonoBehaviour
 {
     public bool coinFlipHeads;
-    //public float charaSpeed;
+    public bool gameOver;
+    public bool momDead;
     public GameObject eventHandler;
     public GameObject statManager;
     public GameObject panel;
+    public GameObject sceneHandler;
 
     private Text panelMainText;
     private Text buttonAText;
     private Text buttonBText;
 
-    //private CharacterController myController;
     private EventFunctions functions;
 
     private StatsManagerController smc;
-    private string currentTrigger;
+    private SceneInteract sceneManager;
     private bool hasBeenOutside;
 
     public bool canControl;
@@ -31,12 +32,11 @@ public class ABHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //myController = GetComponent<CharacterController>();
         functions = eventHandler.GetComponent<EventFunctions>();
         smc = statManager.GetComponent<StatsManagerController>();
-        currentTrigger = "";
         canControl = true;
         hasBeenOutside = false;
+        sceneManager = sceneHandler.GetComponent<SceneInteract>();
         panelMainText = panel.transform.GetChild(0).GetComponent<Text>();
         buttonAText = panel.transform.GetChild(1).GetChild(0).GetComponent<Text>();
         buttonBText = panel.transform.GetChild(2).GetChild(0).GetComponent<Text>();
@@ -45,7 +45,11 @@ public class ABHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameOver)
+        {
+            EndGame();
+        }
+            
     }
 
     private void OnTriggerStay(Collider collider)
@@ -67,6 +71,9 @@ public class ABHandler : MonoBehaviour
             string msg = "";
             switch (currentTag)
             {
+                case "Bed":
+                    panelMainText.text = "Sleep?";
+                    break;
                 case "Stove":
                     if (smc.myFood > 0)
                         panelMainText.text = "Make Food?";
@@ -116,6 +123,14 @@ public class ABHandler : MonoBehaviour
                     {
                         hasBeenOutside = true;
                         panelMainText.text = "Leave house?";
+                    }
+                    else
+                    {
+                        //You've already left for the day
+                        panel.SetActive(false);
+                        panelMainText.text = "";
+                        currentTag = "";
+                        canControl = true;
                     }
                     break;
 
@@ -246,21 +261,50 @@ public class ABHandler : MonoBehaviour
     {
         switch (tag)
         {
-            case "Stove":
+            case "Bed":
                 if (leftChoice)
                 {
-                    //Who to give food to?
-                    currentTag = "Stove2";
-                    panelMainText.text = "Feed Mom or Yourself?";
-                    buttonAText.text = "Feed Mom";
-                    buttonBText.text = "Feed Yourself";
+                    //Sleep
+                    hasBeenOutside = false;
+                    functions.NightEvent();
+                }
+                panel.gameObject.SetActive(false);
+                panelMainText.text = "";
+                buttonAText.text = "Yes";
+                buttonBText.text = "No";
+                currentTag = "";
+                canControl = true;
+                break;
+            case "Stove":
+                if (!momDead)
+                {
+                    if (leftChoice)
+                    {
+                        //Who to give food to?
+                        currentTag = "Stove2";
+                        panelMainText.text = "Feed Mom or Yourself?";
+                        buttonAText.text = "Feed Mom";
+                        buttonBText.text = "Feed Yourself";
+                    }
+                    else
+                    {
+                        panel.gameObject.SetActive(false);
+                        panelMainText.text = "";
+                        currentTag = "";
+                        canControl = true;
+                    }
                 }
                 else
                 {
+                    if (leftChoice)
+                    {
+                        //Give food to self
+                        functions.SelfEatFood();
+                    }
+                    canControl = true;
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 break;
 
@@ -296,20 +340,35 @@ public class ABHandler : MonoBehaviour
                 break;
 
             case "Med Cabinet":
-                if (leftChoice)
+                if (!momDead)
                 {
-                    //Who to give medicine to?
-                    currentTag = "Med Cabinet 2";
-                    panelMainText.text = "Heal Mom or Yourself?";
-                    buttonAText.text = "Heal Mom";
-                    buttonBText.text = "Heal Yourself";
+                    if (leftChoice)
+                    {
+                        //Who to give medicine to?
+                        currentTag = "Med Cabinet 2";
+                        panelMainText.text = "Heal Mom or Yourself?\nCan only heal each once per Day";
+                        buttonAText.text = "Heal Mom";
+                        buttonBText.text = "Heal Yourself";
+                    }
+                    else
+                    {
+                        panel.gameObject.SetActive(false);
+                        panelMainText.text = "";
+                        currentTag = "";
+                        canControl = true;
+                    }
                 }
                 else
                 {
+                    if (leftChoice)
+                    {
+                        //Give medicine to self
+                        functions.SelfTakeMedicine();
+                    }
+                    canControl = true;
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 break;
 
@@ -327,13 +386,15 @@ public class ABHandler : MonoBehaviour
                 canControl = true;
                 panel.gameObject.SetActive(false);
                 panelMainText.text = "";
+                buttonAText.text = "Yes";
+                buttonBText.text = "No";
                 currentTag = "";
                 break;
 
             case "Fire":
                 if (leftChoice)
                 {
-                    Debug.Log("make the fire");
+                    //Debug.Log("make the fire");
                     functions.CreateFire();
                 }
                 panel.gameObject.SetActive(false);
@@ -347,7 +408,8 @@ public class ABHandler : MonoBehaviour
                 if (leftChoice)
                 {
                     //Leave House
-                    //function to leave house called here
+                    sceneManager.load("Gavin_new 1");
+                    hasBeenOutside = true;
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
@@ -604,6 +666,24 @@ public class ABHandler : MonoBehaviour
                 break;
         }
         functions.UpdateAll();
+        CheckForDeaths();
+    }
+
+    private void CheckForDeaths()
+    {
+        if (smc.playerHP <= 0 || smc.shelterHP <= 0)
+        {
+            gameOver = true;
+        }
+        else if (smc.momHP < 0)
+        {
+            momDead = true;
+        }
+    }
+
+    private void EndGame()
+    {
+        //Call end game script here
     }
 
     public void A()

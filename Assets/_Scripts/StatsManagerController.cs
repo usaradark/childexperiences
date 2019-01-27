@@ -22,6 +22,7 @@ public class StatsManagerController : MonoBehaviour
     public int myFood;
     public int myMedicine;
     public int myWood;
+
     // Start is called before the first frame update
     void Start()
     {

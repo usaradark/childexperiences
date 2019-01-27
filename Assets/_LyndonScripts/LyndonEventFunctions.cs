@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventFunctions : MonoBehaviour
+public class LyndonEventFunctions : MonoBehaviour
 {
     private StatsManagerController existingValues;
-    private int selfMedApplied;
-    private int momMedApplied;
 
     public GameObject statsManager;
     public int deltaFood;
@@ -19,6 +17,14 @@ public class EventFunctions : MonoBehaviour
     public int deltaShelterHealth;
     public float deltaShelterHealthDecreaseRate;
     public bool nextRepairTwiceAsEffective;
+
+    [Header("Audio")]
+    public AudioSource source;
+    public AudioClip fireCraklingClip;
+    public AudioClip hammerHitClip;
+    public AudioClip rainClip;
+
+    public GameObject fireplace;
 
     public void ZeroAll()
     {
@@ -89,8 +95,6 @@ public class EventFunctions : MonoBehaviour
         deltaMomHealth = (int)(-1 * existingValues.momHPLoss);
         deltaShelterHealth = (int)(-1 * existingValues.shelterHPLoss);
         existingValues.fireIsLit = false;
-        selfMedApplied /= 2;
-        momMedApplied /= 2;
     }
 
     public void ChurchA1()
@@ -179,7 +183,7 @@ public class EventFunctions : MonoBehaviour
     {
         ZeroAll();
         nextRepairTwiceAsEffective = true;
-        
+
     }
 
     public void HardwareB1()
@@ -247,6 +251,7 @@ public class EventFunctions : MonoBehaviour
 
     public void HomeRepairRoof()
     {
+        source.PlayOneShot(hammerHitClip, 1f);
         ZeroAll();
         deltaWood = -2;
         deltaShelterHealthDecreaseRate = .5f;
@@ -255,6 +260,8 @@ public class EventFunctions : MonoBehaviour
 
     public void CreateFire()
     {
+        source.PlayOneShot(fireCraklingClip, 1f);
+        fireplace.gameObject.SetActive(true);
         ZeroAll();
         deltaWood = -2;
         deltaShelterHealth = 35;
@@ -278,33 +285,20 @@ public class EventFunctions : MonoBehaviour
     public void SelfTakeMedicine()
     {
         ZeroAll();
-        if (selfMedApplied < 2)
-        {
-            selfMedApplied += 2;
-            if (selfMedApplied <= 2)
-                deltaSelfHealthDecreaseRate = .5f;
-            else
-                deltaSelfHealthDecreaseRate = .25f;
-            deltaMedicine = -1;
-        }
+        deltaSelfHealthDecreaseRate = .5f;
+        deltaMedicine = -1;
     }
 
     public void MomTakeMedicine()
     {
         ZeroAll();
-        if (momMedApplied < 2)
-        {
-            momMedApplied += 2;
-            if (momMedApplied <= 2)
-                deltaMomHealthDecreaseRate = .5f;
-            else
-                deltaMomHealthDecreaseRate = .25f;
-            deltaMedicine = -1;
-        }
+        deltaMomHealthDecreaseRate = .5f;
+        deltaMedicine = -1;
     }
 
     public void HeavyRain()
     {
+        source.PlayOneShot(rainClip, 1f);
         ZeroAll();
         deltaSelfHealth = -10;
         deltaMomHealth = -10;
@@ -315,7 +309,7 @@ public class EventFunctions : MonoBehaviour
         ZeroAll();
         if (existingValues.fireIsLit)
         {
-            
+
         }
         else
         {
@@ -329,7 +323,7 @@ public class EventFunctions : MonoBehaviour
     public void MomExtraSick()
     {
         ZeroAll();
-        if(existingValues.fireIsLit == true)
+        if (existingValues.fireIsLit == true)
         {
 
         }
@@ -342,9 +336,9 @@ public class EventFunctions : MonoBehaviour
     public void Burglar()
     {
         ZeroAll();
-        if(existingValues.holeIsPatched)
+        if (existingValues.holeIsPatched)
         {
-            
+
         }
         else
         {
@@ -369,14 +363,12 @@ public class EventFunctions : MonoBehaviour
     void Start()
     {
         existingValues = statsManager.GetComponent<StatsManagerController>();
-        selfMedApplied = 0;
-        momMedApplied = 0;
         ZeroAll();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

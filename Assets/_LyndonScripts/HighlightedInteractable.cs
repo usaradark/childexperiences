@@ -6,11 +6,14 @@ using UnityEngine.AI;
 
 public class HighlightedInteractable : MonoBehaviour
 {
+    [Header("Mouse")]
     public Color startColor;
     public Color mouseOverColor;
 
+    [Header("Canvas")]
     public GameObject panel;
     public Text promptLocation;
+    public Text interact;
 
     public GameObject interText;
 
@@ -19,17 +22,14 @@ public class HighlightedInteractable : MonoBehaviour
     public string locationName;
     bool mouseOver = false;
 
+    [Header("NavMesh")]
     Camera cam;
     public LayerMask groundLayer;
     public GameObject player;
     private UnityEngine.AI.NavMeshAgent playerAgent;
 
-    public GameObject[] locations;
-
-    public Vector3 lastPosition;
-    private bool isInLocation;
-
-    public Text interact;
+    [Header("Animator")]
+    public Animator animator;
 
     #region Monobehavior API;
 
@@ -42,10 +42,23 @@ public class HighlightedInteractable : MonoBehaviour
 
     private void Update()
     {
-        lastPosition = player.transform.position;
+        float h = playerAgent.velocity.x;
+        float v = playerAgent.velocity.z;
+        animator.SetFloat("horizontal", h);
+        animator.SetFloat("vertical", v);
+
+        if (Mathf.Abs(h) > 0 || Mathf.Abs(v) > 0)
+            animator.SetBool("isMoving", true);
+        else
+            animator.SetBool("isMoving", false);
+
 
         player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 0, player.transform.eulerAngles.z);
+<<<<<<< HEAD:Assets/LyndonScripts/HighlightedInteractable.cs
 
+=======
+        print(playerAgent.velocity);
+>>>>>>> c9cd429bdacd95c9c8c21a9aceb3e7d5f49657d4:Assets/_LyndonScripts/HighlightedInteractable.cs
     }
 
     // Start is called before the first frame update
@@ -75,8 +88,12 @@ public class HighlightedInteractable : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+<<<<<<< HEAD:Assets/LyndonScripts/HighlightedInteractable.cs
         isInLocation = true;
         //interact.gameObject.SetActive(true);
+=======
+        interact.gameObject.SetActive(true);
+>>>>>>> c9cd429bdacd95c9c8c21a9aceb3e7d5f49657d4:Assets/_LyndonScripts/HighlightedInteractable.cs
         if (Input.GetKeyDown(KeyCode.E))
         {
             panel.SetActive(true);
@@ -87,8 +104,12 @@ public class HighlightedInteractable : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+<<<<<<< HEAD:Assets/LyndonScripts/HighlightedInteractable.cs
         isInLocation = false;
         //interact.gameObject.SetActive(false);
+=======
+        interact.gameObject.SetActive(false);
+>>>>>>> c9cd429bdacd95c9c8c21a9aceb3e7d5f49657d4:Assets/_LyndonScripts/HighlightedInteractable.cs
     }
 
     #endregion

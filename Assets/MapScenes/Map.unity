@@ -134,21 +134,14 @@ MonoBehaviour:
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 1531238912}
   dia_opt: {fileID: 167701742}
   locationName: Store
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 443538849}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1552624626}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 1531238912}
+  animator: {fileID: 649812899}
 --- !u!114 &167701742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +260,150 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &356646598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 356646599}
+  - component: {fileID: 356646601}
+  - component: {fileID: 356646600}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &356646599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356646598}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 785029710}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &356646600
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356646598}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 45
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &356646601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356646598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1feab5d2cf38d4d9a9c65c15e942f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 356646600}
+  walkingOutsideClip: {fileID: 8300000, guid: 5191581c6fd4a924eb8bdf6f03b3cdce, type: 3}
+  player: {fileID: 443538849}
+  maxAudioDelay: 30
 --- !u!195 &443538848
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -530,6 +667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 649812897}
   - component: {fileID: 649812898}
+  - component: {fileID: 649812899}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -599,6 +737,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &649812899
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649812896}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e8f64d896db33440b49064d533aece8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &669797238
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +850,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2061155778}
+  - {fileID: 356646599}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -817,21 +975,14 @@ MonoBehaviour:
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 1531238912}
   dia_opt: {fileID: 1052904991}
   locationName: Forest
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 443538849}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1552624626}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 1531238912}
+  animator: {fileID: 649812899}
 --- !u!114 &1052904991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1430,21 +1581,14 @@ MonoBehaviour:
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 1531238912}
   dia_opt: {fileID: 1552624628}
   locationName: Beach
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 443538849}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1552624626}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 1531238912}
+  animator: {fileID: 649812899}
 --- !u!114 &1552624628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1671,21 +1815,14 @@ MonoBehaviour:
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 1531238912}
   dia_opt: {fileID: 1919369563}
   locationName: Hospital
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 443538849}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1552624626}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 1531238912}
+  animator: {fileID: 649812899}
 --- !u!114 &1919369563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1833,21 +1970,14 @@ MonoBehaviour:
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 1531238912}
   dia_opt: {fileID: 1920089213}
   locationName: Hardware Store
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 443538849}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1552624626}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 1531238912}
+  animator: {fileID: 649812899}
 --- !u!114 &1920089213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2021,21 +2151,14 @@ MonoBehaviour:
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 1531238912}
   dia_opt: {fileID: 1977662716}
   locationName: Beach
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 443538849}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1977662714}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 1531238912}
+  animator: {fileID: 649812899}
 --- !u!1 &2025629798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2376,21 +2499,14 @@ MonoBehaviour:
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 1531238912}
   dia_opt: {fileID: 4100703616302170044}
   locationName: House
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 443538849}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1552624626}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 1531238912}
+  animator: {fileID: 649812899}
 --- !u!4 &4100703616302170043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2099172952807560688, guid: e7c34e9feef54ec4c812f4724bd85250,
