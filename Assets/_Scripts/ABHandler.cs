@@ -627,9 +627,10 @@ public class ABHandler : MonoBehaviour
                 break;
 //forest
             case "ForestA":
+                okPanel.SetActive(true);
                 if (leftChoice)
                 {
-                    Debug.Log("The bow thrums and your arrow manages to hit the doe in the neck. The animal gurgles her yelps in pain and runs off a short distance before collapsing with you in tow. Under your breath you thank those archery lessons from summer camp. Finally the doe succumbs to its wound and you begin to slowly drag the carcass back home. “If you must hunt, make sure you waste none of the animal’s sacrifice” your mom used to say.");
+                    panelOkText.text = "The bow thrums and your arrow manages to hit the doe in the neck. The animal gurgles her yelps in pain and runs off a short distance before collapsing with you in tow. Under your breath you thank those archery lessons from summer camp. Finally the doe succumbs to its wound and you begin to slowly drag the carcass back home. “If you must hunt, make sure you waste none of the animal’s sacrifice” your mom used to say.";
                     functions.ForestA1();
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
@@ -638,78 +639,74 @@ public class ABHandler : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("“Enough things have died around this town, this poor fella probably lost his parents too” you say as you begin to tear at nearby branches. With a solid crack you dislodge a sizable branch from a dead tree, out of the corner of your eye you see the doe sprint off deeper into the forest.");
+                    panelOkText.text = "“Enough things have died around this town, this poor fella probably lost his parents too” you say as you begin to tear at nearby branches. With a solid crack you dislodge a sizable branch from a dead tree, out of the corner of your eye you see the doe sprint off deeper into the forest.";
                     functions.ForestA2();
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 break;
 
             case "ForestB":
+                okPanel.SetActive(true);
                 if (leftChoice)
                 {
-                    Debug.Log("You recognize the edible berries from back when your parents took you to the woods to go berry foraging. You pick the bushes and logs clean of their bounty. It’s not much, but it’s better than nothing.");
+                    panelOkText.text = "You recognize the edible berries from back when your parents took you to the woods to go berry foraging. You pick the bushes and logs clean of their bounty. It’s not much, but it’s better than nothing.";
                     functions.ForestB1();
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 else
                 {
-                    Debug.Log("Most of these trees yield useless wood. You poke around the ground trying to find a few larger branches with some strength left in them. You finally find one, hoist half of it on your shoulder and begin dragging it home.");
+                    panelOkText.text = "Most of these trees yield useless wood. You poke around the ground trying to find a few larger branches with some strength left in them. You finally find one, hoist half of it on your shoulder and begin dragging it home.";
                     functions.ForestB2();
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 break;
 
 //grocery
             case "GroceryA":
+                okPanel.SetActive(true);
                 if (leftChoice)
                 {
                     //Leave House
                     //function to leave house called here
-                    Debug.Log("It pays to be small sometimes, you quip as you crawl under a few collapsed shelves. Jackpot -- you find several cans of soup that must have rolled under after the shelves collapsed.");
+                    panelOkText.text = "It pays to be small sometimes, you quip as you crawl under a few collapsed shelves. Jackpot -- you find several cans of soup that must have rolled under after the shelves collapsed.";
                     functions.GroceryA1();
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 else
                 {
-                    Debug.Log("No use crawling around on the floor for whatever the rats left behind. A few of the shelves still have some sturdy planks that you manage to pry free. Lifting one plank reveals medicine, which you take.");
+                    panelOkText.text = "No use crawling around on the floor for whatever the rats left behind. A few of the shelves still have some sturdy planks that you manage to pry free. Lifting one plank reveals medicine, which you take.";
                     functions.GroceryA2();
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 break;
 
             case "GroceryB":
-                if(leftChoice)
+                okPanel.SetActive(true);
+                if (leftChoice)
                 {
-                    Debug.Log("'Excuse me, Miss.' you say looking at the cornucopia on display on her cart. “How may I help you, child”. She replies sweetly. “How much for the pumpkin, I’ve only seen them in story books. I have medicine to trade” “Lord knows I could use a few planks to fix up my old ramp, I'll trade you the pumpkin for one of those planks,” You put wood alongside her stand and grab the pumpkin wondering what you can make at home with it.");
+                    panelOkText.text = "'Excuse me, Miss.' you say looking at the cornucopia on display on her cart. “How may I help you, child”. She replies sweetly. “How much for the pumpkin, I’ve only seen them in story books. I have medicine to trade” “Lord knows I could use a few planks to fix up my old ramp, I'll trade you the pumpkin for one of those planks,” You put wood alongside her stand and grab the pumpkin wondering what you can make at home with it.";
                     functions.GroceryB1();
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 else
                 {
-                    Debug.Log("'Excuse me, Miss.' you say looking at the cornucopia on display on her cart. “How may I help you, child”. She replies sweetly. “How much for the pumpkin, I’ve only seen them in story books. I have medicine to trade” “Lord knows I could use a few of those, toss me one and the pumpkin is all yours,” You hand over medicine and grab the pumpkin wondering what you can make at home with it.");
+                    panelOkText.text = "'Excuse me, Miss.' you say looking at the cornucopia on display on her cart. “How may I help you, child”. She replies sweetly. “How much for the pumpkin, I’ve only seen them in story books. I have medicine to trade” “Lord knows I could use a few of those, toss me one and the pumpkin is all yours,” You hand over medicine and grab the pumpkin wondering what you can make at home with it.";
                     functions.GroceryB2();
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 break;
         }
