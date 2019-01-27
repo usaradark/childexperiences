@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HouseCharacterController : MonoBehaviour
+public class ABHandler : MonoBehaviour
 {
+
     public float charaSpeed;
     public GameObject eventHandler;
     public GameObject statManager;
@@ -40,58 +41,18 @@ public class HouseCharacterController : MonoBehaviour
 
     private void MovePlayer()
     {
-        if(canControl)
+        if (canControl)
         {
-<<<<<<< HEAD
-            panel.SetActive(true);
-            Time.timeScale = 0;
-            switch (collider.tag)
-            {
-                case "Door":
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "Leave?";
-                    break;
-                case "Stove":
-                    if (smc.myFood > 0)
-                    {
-                        panel.transform.GetChild(0).GetComponent<Text>().text = "Make food?";
-                        currentTrigger = "Stove";
-                    }
-                    break;
-                case "Hole":
-                    if (smc.myWood > 0)
-                    {
-                        panel.transform.GetChild(0).GetComponent<Text>().text = "Repair house?";
-                        currentTrigger = "Hole";
-                    }
-                    break;
-                case "Fireplace":
-                    if (smc.myWood > 0)
-                    {
-                        panel.transform.GetChild(0).GetComponent<Text>().text = "Build Fire?";
-                        currentTrigger = "Fireplace";
-                    }
-                    break;
-            }
-=======
             float moveX = Input.GetAxis("Horizontal");
             float moveY = Input.GetAxis("Vertical");
             Vector3 playerMove = new Vector3(moveX, 0.0f, moveY);
             myController.SimpleMove(playerMove * charaSpeed);
->>>>>>> 3f15d1d50dc199b6238314701f1e7665fd222e17
         }
 
     }
 
     private void OnTriggerStay(Collider collider)
     {
-<<<<<<< HEAD
-        panel.transform.GetChild(0).GetComponent<Text>().text = "";
-        RunTriggerAction();
-        //Time.timeScale = 1;
-        //panel.SetActive(false);
-    }
-=======
->>>>>>> 3f15d1d50dc199b6238314701f1e7665fd222e17
 
         if (Input.GetKeyDown(KeyCode.E) && canControl)
         {
@@ -103,7 +64,7 @@ public class HouseCharacterController : MonoBehaviour
             //OperateOnTag(collider.gameObject.tag);
 
             //print(panel.transform.GetChild(0).GetComponent<Text>().text);
-            
+
         }
     }
 
@@ -112,7 +73,7 @@ public class HouseCharacterController : MonoBehaviour
         switch (tag)
         {
             case "Stove":
-                if(leftChoice)
+                if (leftChoice)
                 {
                     currentTag = "Stove2";
                     panel.transform.GetChild(0).GetComponent<Text>().text = "STOVE2";
@@ -127,15 +88,9 @@ public class HouseCharacterController : MonoBehaviour
                     canControl = true;
                 }
                 break;
-<<<<<<< HEAD
-            case "Hole":
-                functions.HomeRepairRoof();
-                Time.timeScale = 1;
-                panel.SetActive(false);
-=======
 
             case "Stove2":
-                if(leftChoice)
+                if (leftChoice)
                 {
                     currentTag = "Stove3";
                     panel.transform.GetChild(0).GetComponent<Text>().text = "STOVE3";
@@ -148,7 +103,6 @@ public class HouseCharacterController : MonoBehaviour
                     currentTag = "";
                     canControl = true;
                 }
->>>>>>> 3f15d1d50dc199b6238314701f1e7665fd222e17
                 break;
 
             case "Stove3":
@@ -168,10 +122,10 @@ public class HouseCharacterController : MonoBehaviour
                 }
 
                 break;
-            
-                
+
+
         }
-        functions.UpdateAll();
+
     }
 
     public void A()
