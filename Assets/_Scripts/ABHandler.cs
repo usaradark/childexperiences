@@ -29,9 +29,15 @@ public class ABHandler : MonoBehaviour
 
     bool leftChoice = true;
 
+    private bool EwasPressed;
+    private float timeSinceLastEWasPressed;
+    public float ETimeout;
+
     // Start is called before the first frame update
     void Start()
     {
+        timeSinceLastEWasPressed = 0;
+        EwasPressed = false;
         functions = eventHandler.GetComponent<EventFunctions>();
         smc = statManager.GetComponent<StatsManagerController>();
         canControl = true;
@@ -45,6 +51,17 @@ public class ABHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.E) && canControl)
+        {
+            EwasPressed = true;
+            timeSinceLastEWasPressed = 0;
+        }
+        timeSinceLastEWasPressed += Time.deltaTime;
+        if(timeSinceLastEWasPressed > ETimeout)
+        {
+            EwasPressed = false;
+            timeSinceLastEWasPressed = 0;
+        }
         if (gameOver)
         {
             EndGame();
@@ -54,7 +71,7 @@ public class ABHandler : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        if (Input.GetKeyDown(KeyCode.E) && canControl)
+        if (EwasPressed && canControl)
         {
             //Debug.Log("E pressed in Stay");
             if(Random.Range(0, 2) == 1)
@@ -132,6 +149,9 @@ public class ABHandler : MonoBehaviour
                         currentTag = "";
                         canControl = true;
                     }
+                    break;
+                case "House":
+                    panelMainText.text = "Enter house for the night?";
                     break;
 
                 //outdoor
@@ -251,8 +271,6 @@ public class ABHandler : MonoBehaviour
                         buttonBText.text = "Trade Wood for food";
                     }
                     break;
-   
-
             }
         }
     }
@@ -423,6 +441,25 @@ public class ABHandler : MonoBehaviour
                     canControl = true;
                 }
                 break;
+            case "House":
+                if (leftChoice)
+                {
+                    //Leave House
+                    sceneManager.load("Gavin test");
+                    panel.gameObject.SetActive(false);
+                    panelMainText.text = "";
+                    currentTag = "";
+                    canControl = true;
+                }
+                else
+                {
+                    panel.gameObject.SetActive(false);
+                    panelMainText.text = "";
+                    currentTag = "";
+                    canControl = true;
+                }
+                break;
+
             case "ChurchA":
                 if (leftChoice)
                 {

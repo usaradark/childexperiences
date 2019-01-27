@@ -18,6 +18,7 @@ TagManager:
   - Location
   - Ignore
   - Bed
+  - House
   layers:
   - Default
   - TransparentFX
