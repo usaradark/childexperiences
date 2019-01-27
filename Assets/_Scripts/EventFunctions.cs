@@ -48,25 +48,27 @@ public class EventFunctions : MonoBehaviour
     public void ChurchA1()
     {
         ZeroAll();
-        deltaWood = 2;
+        deltaWood = 3;
         deltaSelfHealth = -10;
     }
 
     public void ChurchA2()
     {
         ZeroAll();
+        deltaFood = 1;
     }
 
     public void ChurchB1()
     {
         ZeroAll();
         deltaFood = 1;
+        deltaMedicine = 1;
     }
 
     public void ChurchB2()
     {
         ZeroAll();
-        deltaWood = 2;
+        deltaWood = 3;
     }
 
     public void HarborA1()
@@ -85,7 +87,7 @@ public class EventFunctions : MonoBehaviour
     {
         ZeroAll();
         deltaWood = -2;
-        deltaFood = +4;
+        deltaFood = +5;
     }
 
     public void HarborB2()
@@ -104,6 +106,7 @@ public class EventFunctions : MonoBehaviour
     {
         ZeroAll();
         deltaFood = -1;
+        deltaMedicine = 2;
     }
 
     public void HospitalB1()
@@ -121,7 +124,7 @@ public class EventFunctions : MonoBehaviour
     public void HardwareA1()
     {
         ZeroAll();
-        deltaWood = 2;
+        deltaWood = 3;
     }
 
     public void HardwareA2()
@@ -134,18 +137,19 @@ public class EventFunctions : MonoBehaviour
     public void HardwareB1()
     {
         ZeroAll();
-        deltaWood = 3;
+        deltaWood = 4;
     }
 
     public void HardwareB2()
     {
         ZeroAll();
+        deltaFood = 2;
     }
 
     public void ForestA1()
     {
         ZeroAll();
-        deltaFood = 3;
+        deltaFood = 2;
     }
 
     public void ForestA2()
@@ -163,7 +167,7 @@ public class EventFunctions : MonoBehaviour
     public void ForestB2()
     {
         ZeroAll();
-        deltaWood = 1;
+        deltaWood = 2;
     }
 
     public void GroceryA1()
@@ -176,6 +180,7 @@ public class EventFunctions : MonoBehaviour
     {
         ZeroAll();
         deltaWood = 1;
+        deltaMedicine = 1;
     }
 
     public void GroceryB1()
@@ -203,19 +208,19 @@ public class EventFunctions : MonoBehaviour
     {
         ZeroAll();
         deltaWood = -2;
-        deltaShelterHealth = 20;
+        deltaShelterHealth = 35;
     }
 
     public void SelfEatFood()
     {
         ZeroAll();
-        deltaSelfHealth = 20;
+        deltaSelfHealth = 25;
     }
 
     public void MomEatFood()
     {
         ZeroAll();
-        deltaMomHealth = 20;
+        deltaMomHealth = 25;
     }
 
     public void SelfTakeMedicine()
