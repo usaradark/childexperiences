@@ -19,6 +19,7 @@ public class EventFunctions : MonoBehaviour
     public int deltaShelterHealth;
     public float deltaShelterHealthDecreaseRate;
     public bool nextRepairTwiceAsEffective;
+    public bool notEnoughToTrade;
 
     public void ZeroAll()
     {
@@ -32,6 +33,7 @@ public class EventFunctions : MonoBehaviour
         deltaShelterHealth = 0;
         deltaShelterHealthDecreaseRate = 1;
         nextRepairTwiceAsEffective = false;
+        notEnoughToTrade = false;
     }
 
     public void UpdateAll()
@@ -133,8 +135,13 @@ public class EventFunctions : MonoBehaviour
     public void HarborB1()
     {
         ZeroAll();
-        deltaWood = -2;
-        deltaFood = 4;
+        if (existingValues.myWood >= 2)
+        {
+            deltaWood = -2;
+            deltaFood = 4;
+        }
+        else
+            notEnoughToTrade = true;
     }
 
     public void HarborB2()
@@ -152,8 +159,11 @@ public class EventFunctions : MonoBehaviour
     public void HospitalA2()
     {
         ZeroAll();
-        deltaFood = -1;
-        deltaMedicine = 2;
+        if (existingValues.myFood < 1)
+        {
+            deltaFood = -1;
+            deltaMedicine = 2;
+        }
     }
 
     public void HospitalB1()
@@ -178,7 +188,6 @@ public class EventFunctions : MonoBehaviour
     {
         ZeroAll();
         nextRepairTwiceAsEffective = true;
-        
     }
 
     public void HardwareB1()
@@ -233,15 +242,25 @@ public class EventFunctions : MonoBehaviour
     public void GroceryB1()
     {
         ZeroAll();
-        deltaMedicine = -1;
-        deltaFood = 3;
+        if (existingValues.myFood < 1)
+        {
+            deltaMedicine = -1;
+            deltaFood = 3;
+        }
+        else
+            notEnoughToTrade = true;
     }
 
     public void GroceryB2()
     {
         ZeroAll();
-        deltaWood = -1;
-        deltaFood = 3;
+        if (existingValues.myWood < 1)
+        {
+            deltaWood = -1;
+            deltaFood = 3;
+        }
+        else
+            notEnoughToTrade = true;
     }
 
     public void HomeRepairRoof()
