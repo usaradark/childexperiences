@@ -19,6 +19,7 @@ public class HighlightedInteractable : MonoBehaviour
 
     public Button Option1;
     public Button Option2;
+    public Button Back;
 
     Camera cam;
     public LayerMask groundLayer;
@@ -54,6 +55,8 @@ public class HighlightedInteractable : MonoBehaviour
     {
         if (this.gameObject.CompareTag("Location"))
         {
+            point = this.gameObject.transform.position;
+
             panel.SetActive(true);
             playerAgent.SetDestination(gameObject.transform.position);
             promptLocation.text = locationName;
@@ -66,6 +69,8 @@ public class HighlightedInteractable : MonoBehaviour
 
             Option1.onClick.AddListener(dia_opt.printOption_1_Result);
             Option2.onClick.AddListener(dia_opt.printOption_2_Result);
+
+            Back.onClick.AddListener(disablePanel);
 
             setLocationTagToIgnore();
         }
@@ -88,8 +93,9 @@ public class HighlightedInteractable : MonoBehaviour
         }
     }
 
-    public void disableCanvas()
+    public void disablePanel()
     {
+        setLocationTagBack();
         panel.SetActive(false);
     }
 

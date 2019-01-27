@@ -138,6 +138,7 @@ MonoBehaviour:
   locationName: Store
   Option1: {fileID: 825497614}
   Option2: {fileID: 300022976}
+  Back: {fileID: 1220506998}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -918,6 +919,7 @@ MonoBehaviour:
   locationName: Forest
   Option1: {fileID: 825497614}
   Option2: {fileID: 300022976}
+  Back: {fileID: 1220506998}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -1170,7 +1172,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1220506999}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1131105342}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1220506999
@@ -1661,6 +1674,7 @@ MonoBehaviour:
   locationName: Beach
   Option1: {fileID: 825497614}
   Option2: {fileID: 300022976}
+  Back: {fileID: 1220506998}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -1896,6 +1910,7 @@ MonoBehaviour:
   locationName: Hospital
   Option1: {fileID: 825497614}
   Option2: {fileID: 300022976}
+  Back: {fileID: 1220506998}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -2052,6 +2067,7 @@ MonoBehaviour:
   locationName: Hardware Store
   Option1: {fileID: 825497614}
   Option2: {fileID: 300022976}
+  Back: {fileID: 1220506998}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -2445,6 +2461,7 @@ MonoBehaviour:
   locationName: House
   Option1: {fileID: 825497614}
   Option2: {fileID: 300022976}
+  Back: {fileID: 1220506998}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256

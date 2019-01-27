@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7762520765636981117}
   - component: {fileID: 7762520765636981114}
   - component: {fileID: 7762520765636981115}
-  - component: {fileID: 2019457790313046296}
+  - component: {fileID: 1406145372534642832}
   - component: {fileID: 7762520765636981112}
   m_Layer: 0
   m_Name: LyndonPlayer
@@ -94,7 +94,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2019457790313046296
+--- !u!114 &1406145372534642832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,11 +103,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7762520765636981113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984798b63e7484944840a1fa8530e77d, type: 3}
+  m_Script: {fileID: 11500000, guid: 49d58127c7bafcd4a9bd5d172707a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interact_canvas: {fileID: 0}
-  sceneInteract: {fileID: 0}
+  charaSpeed: 0
+  eventHandler: {fileID: 0}
+  statManager: {fileID: 0}
+  panel: {fileID: 0}
+  canControl: 0
+  currentTag: 
 --- !u!143 &7762520765636981112
 CharacterController:
   m_ObjectHideFlags: 0
