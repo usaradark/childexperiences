@@ -6,28 +6,27 @@ using UnityEngine.AI;
 
 public class HighlightedInteractable : MonoBehaviour
 {
+    [Header("Mouse")]
     public Color startColor;
     public Color mouseOverColor;
 
+    [Header("Canvas")]
     public GameObject panel;
     public Text promptLocation;
+    public Text interact;
 
     public dialogue_option dia_opt;
 
     public string locationName;
     bool mouseOver = false;
 
+    [Header("NavMesh")]
     Camera cam;
     public LayerMask groundLayer;
     public GameObject player;
     private UnityEngine.AI.NavMeshAgent playerAgent;
 
-    public GameObject[] locations;
-
-    public Vector3 lastPosition;
-    private bool isInLocation;
-
-    public Text interact;
+    public Animator animator;
 
     #region Monobehavior API;
 
@@ -40,9 +39,19 @@ public class HighlightedInteractable : MonoBehaviour
 
     private void Update()
     {
-        lastPosition = player.transform.position;
+        float h = playerAgent.velocity.x;
+        float v = playerAgent.velocity.z;
+        animator.SetFloat("horizontal", h);
+        animator.SetFloat("vertical", v);
+
+        if (Mathf.Abs(h) > 0 || Mathf.Abs(v) > 0)
+            animator.SetBool("isMoving", true);
+        else
+            animator.SetBool("isMoving", false);
+
 
         player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 0, player.transform.eulerAngles.z);
+        print(playerAgent.velocity);
     }
 
     // Start is called before the first frame update
@@ -72,7 +81,6 @@ public class HighlightedInteractable : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        isInLocation = true;
         interact.gameObject.SetActive(true);
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -84,7 +92,6 @@ public class HighlightedInteractable : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        isInLocation = false;
         interact.gameObject.SetActive(false);
     }
 
