@@ -15,7 +15,6 @@ public class ABHandler : MonoBehaviour
     private EventFunctions functions;
 
     private StatsManagerController smc;
-    private string currentTrigger;
     private bool hasBeenOutside;
 
     public bool canControl;
@@ -30,7 +29,6 @@ public class ABHandler : MonoBehaviour
         //myController = GetComponent<CharacterController>();
         functions = eventHandler.GetComponent<EventFunctions>();
         smc = statManager.GetComponent<StatsManagerController>();
-        currentTrigger = "";
         canControl = true;
         hasBeenOutside = false;
     }
