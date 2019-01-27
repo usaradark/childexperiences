@@ -256,7 +256,7 @@ PrefabInstance:
     - target: {fileID: 2084253914411273703, guid: 681742e305b06a34b95c7475cc06f9b1,
         type: 3}
       propertyPath: myWood
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2084253914411273703, guid: 681742e305b06a34b95c7475cc06f9b1,
         type: 3}
@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 1976664895}
   m_Layer: 0
   m_Name: Stove
-  m_TagString: Bed
+  m_TagString: Hole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

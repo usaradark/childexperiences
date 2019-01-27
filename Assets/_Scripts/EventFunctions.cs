@@ -84,7 +84,6 @@ public class EventFunctions : MonoBehaviour
     {
         NightRandomEvent();
         UpdateAll();
-        //ZeroAll();
         deltaSelfHealth = (int)(-1 * existingValues.playerHPLoss);
         deltaMomHealth = (int)(-1 * existingValues.momHPLoss);
         deltaShelterHealth = (int)(-1 * existingValues.shelterHPLoss);
@@ -264,15 +263,21 @@ public class EventFunctions : MonoBehaviour
     public void SelfEatFood()
     {
         ZeroAll();
-        deltaSelfHealth = 25;
-        deltaFood = -1;
+        if (existingValues.playerHP < 100)
+        {
+            deltaSelfHealth = 25;
+            deltaFood = -1;
+        }
     }
 
     public void MomEatFood()
     {
         ZeroAll();
-        deltaMomHealth = 25;
-        deltaFood = -1;
+        if (existingValues.momHP < 100)
+        {
+            deltaMomHealth = 25;
+            deltaFood = -1;
+        }
     }
 
     public void SelfTakeMedicine()
