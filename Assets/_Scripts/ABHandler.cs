@@ -719,7 +719,7 @@ public class ABHandler : MonoBehaviour
         }
         functions.UpdateAll();
         CheckForDeaths();
-        if (smc.myDays >= 6)
+        if (smc.myDays >= 7)
         {
             gameWon = true;
         }
