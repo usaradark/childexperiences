@@ -235,7 +235,7 @@ public class ABHandler : MonoBehaviour
                         currentTag = "HardwareB";
                         panelMainText.text = "Your hear the sounds of construction ringing out from the back lot. You peek around the corner of the building and see a burly man sawing huge chunks of plywood into more manageable sections. He stops and stares at you for a while and continues to cut wood.";
                         buttonAText.text = "Cautiously approach";
-                        buttonBText.text = "Back away cautiously and look elsewhere";
+                        buttonBText.text = "Back away carefuly and look elsewhere";
                     }
                     break;
 //Forest
