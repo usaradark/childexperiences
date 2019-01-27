@@ -5,6 +5,8 @@ using UnityEngine;
 public class EventFunctions : MonoBehaviour
 {
     private StatsManagerController existingValues;
+    private int selfMedApplied;
+    private int momMedApplied;
 
     public GameObject statsManager;
     public int deltaFood;
@@ -87,6 +89,8 @@ public class EventFunctions : MonoBehaviour
         deltaMomHealth = (int)(-1 * existingValues.momHPLoss);
         deltaShelterHealth = (int)(-1 * existingValues.shelterHPLoss);
         existingValues.fireIsLit = false;
+        selfMedApplied /= 2;
+        momMedApplied /= 2;
     }
 
     public void ChurchA1()
@@ -274,14 +278,22 @@ public class EventFunctions : MonoBehaviour
     public void SelfTakeMedicine()
     {
         ZeroAll();
-        deltaSelfHealthDecreaseRate = .5f;
+        selfMedApplied += 2;
+        if (selfMedApplied <= 2)
+            deltaSelfHealthDecreaseRate = .5f;
+        else
+            deltaSelfHealthDecreaseRate = .25f;
         deltaMedicine = -1;
     }
 
     public void MomTakeMedicine()
     {
         ZeroAll();
-        deltaMomHealthDecreaseRate = .5f;
+        momMedApplied += 2;
+        if (momMedApplied <= 2)
+            deltaMomHealthDecreaseRate = .5f;
+        else
+            deltaMomHealthDecreaseRate = .25f;
         deltaMedicine = -1;
     }
 
@@ -351,6 +363,8 @@ public class EventFunctions : MonoBehaviour
     void Start()
     {
         existingValues = statsManager.GetComponent<StatsManagerController>();
+        selfMedApplied = 0;
+        momMedApplied = 0;
         ZeroAll();
     }
 
