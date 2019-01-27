@@ -53,7 +53,6 @@ public class ABHandler : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-
         if (Input.GetKeyDown(KeyCode.E) && canControl)
         {
             Debug.Log("E pressed in Stay");
@@ -130,6 +129,25 @@ public class ABHandler : MonoBehaviour
                 }
 
                 break;*/
+
+            case "Hole":
+                if(leftChoice)
+                {
+                    //patch the hole
+                    functions.HomeRepairRoof();
+                    panel.gameObject.SetActive(false);
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                    currentTag = "";
+                    canControl = true;
+                }
+                else
+                {
+                    panel.gameObject.SetActive(false);
+                    panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                    currentTag = "";
+                    canControl = true;
+                }
+                break;
 
 
         }
