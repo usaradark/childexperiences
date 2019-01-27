@@ -48,7 +48,7 @@ public class EventFunctions : MonoBehaviour
     public void ChurchA1()
     {
         ZeroAll();
-        deltaWood = 3;
+        deltaWood = 2;
         deltaSelfHealth = -10;
     }
 
@@ -87,13 +87,13 @@ public class EventFunctions : MonoBehaviour
     {
         ZeroAll();
         deltaWood = -2;
-        deltaFood = +5;
+        deltaFood = 4;
     }
 
     public void HarborB2()
     {
         ZeroAll();
-        deltaFood = 2;
+        deltaFood = 1;
     }
 
     public void HospitalA1()
