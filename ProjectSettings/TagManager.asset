@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+  - Door
+  - Hole
+  - Location
+  - Ignore
+  - Stove
   layers:
   - Default
   - TransparentFX
@@ -14,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - Ground
   - 
   - 
   - 2D Base
