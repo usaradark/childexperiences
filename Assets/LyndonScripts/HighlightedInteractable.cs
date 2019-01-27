@@ -27,23 +27,21 @@ public class HighlightedInteractable : MonoBehaviour
     public Vector3 lastPosition;
     private bool isInLocation;
 
+    public Text interact;
+
     #region Monobehavior API;
 
     private void Start()
     {
         panel.SetActive(false);
+        interact.gameObject.SetActive(false);
         playerAgent = player.GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
         lastPosition = player.transform.position;
-        if (lastPosition == player.transform.position && isInLocation)
-        {
-            panel.SetActive(true);
 
-            promptLocation.text = locationName;
-        }
         player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 0, player.transform.eulerAngles.z);
     }
 
@@ -62,50 +60,32 @@ public class HighlightedInteractable : MonoBehaviour
 
     private void OnMouseDown()
     {
-
-        if (this.gameObject.CompareTag("Location"))
-        {
-            playerAgent.SetDestination(gameObject.transform.position);
-
-            setLocationTagToIgnore();
-        }
+        playerAgent.SetDestination(gameObject.transform.position);
     }
 
     // The three functions below are for the buttons on Canvas in the scene "Map"
-    public void setLocationTagToIgnore()
-    {
-        foreach (GameObject location in locations)
-        {
-            location.tag = "Ignore";
-        }
-    }
-
-    public void setLocationTagBack()
-    {
-        foreach (GameObject location in locations)
-        {
-            location.tag = "Location";
-        }
-    }
 
     public void disablePanel()
     {
-        setLocationTagBack();
         panel.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
     {
         isInLocation = true;
+        interact.gameObject.SetActive(true);
         if (Input.GetKeyDown(KeyCode.E))
         {
-            print(locationName);
+            panel.SetActive(true);
+
+            promptLocation.text = locationName;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         isInLocation = false;
+        interact.gameObject.SetActive(false);
     }
 
     #endregion

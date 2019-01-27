@@ -17,6 +17,7 @@ public class SceneInteract : MonoBehaviour
         }
 
     }
+    
 
     public void load(string level)
     {
