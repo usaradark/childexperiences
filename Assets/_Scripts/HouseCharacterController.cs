@@ -43,9 +43,8 @@ public class HouseCharacterController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            panel.gameObject.SetActive(true);
+            panel.SetActive(true);
             Time.timeScale = 0;
-            print(panel.transform.GetChild(0).GetComponent<Text>().text);
             switch (collider.tag)
             {
                 case "Door":
@@ -87,8 +86,8 @@ public class HouseCharacterController : MonoBehaviour
     {
         panel.transform.GetChild(0).GetComponent<Text>().text = "";
         RunTriggerAction();
-        Time.timeScale = 1;
-        panel.SetActive(false);
+        //Time.timeScale = 1;
+        //panel.SetActive(false);
     }
 
     public void Yourself()
@@ -105,11 +104,13 @@ public class HouseCharacterController : MonoBehaviour
                 break;
             case "Hole":
                 functions.HomeRepairRoof();
+                Time.timeScale = 1;
+                panel.SetActive(false);
                 break;
             case "Fire":
                 functions.CreateFire();
                 break;
         }
-
+        functions.UpdateAll();
     }
 }
