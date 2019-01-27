@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
-public class highlight : MonoBehaviour
+public class HighlightedInteractable : MonoBehaviour
 {
     public Color startColor;
     public Color mouseOverColor;
 
-    public Canvas prompt;
+    public GameObject panel;
     public Text promptLocation;
 
     public dialogue_option dia_opt;
@@ -21,11 +22,20 @@ public class highlight : MonoBehaviour
 
     Camera cam;
     public LayerMask groundLayer;
-    public UnityEngine.AI.NavMeshAgent playerAgent;
+    public GameObject player;
+    private UnityEngine.AI.NavMeshAgent playerAgent;
 
     public GameObject[] locations;
 
+    public Vector3 point;
+
     #region Monobehavior API;
+
+    private void Start()
+    {
+        panel.SetActive(false);
+        playerAgent = player.GetComponent<NavMeshAgent>();
+    }
 
     // Start is called before the first frame update
     void OnMouseEnter()
@@ -44,7 +54,7 @@ public class highlight : MonoBehaviour
     {
         if (this.gameObject.CompareTag("Location"))
         {
-            prompt.gameObject.SetActive(true);
+            panel.SetActive(true);
             playerAgent.SetDestination(gameObject.transform.position);
             promptLocation.text = locationName;
 
@@ -61,6 +71,7 @@ public class highlight : MonoBehaviour
         }
     }
 
+    // The three functions below are for the buttons on Canvas in the scene "Map"
     public void setLocationTagToIgnore()
     {
         foreach (GameObject location in locations)
@@ -77,7 +88,10 @@ public class highlight : MonoBehaviour
         }
     }
 
-
+    public void disableCanvas()
+    {
+        panel.SetActive(false);
+    }
 
     #endregion
 
