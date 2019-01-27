@@ -72,11 +72,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        interText.gameObject.SetActive(true);    
+        //interText.gameObject.SetActive(true);    
     }
 
     private void OnTriggerExit(Collider other)
     {
-        interText.gameObject.SetActive(false);
+        //interText.gameObject.SetActive(false);
     }
 }

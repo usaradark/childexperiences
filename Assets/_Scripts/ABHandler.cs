@@ -38,6 +38,7 @@ public class ABHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        statManager = GameObject.Find("StatsManager");
         timeSinceLastEWasPressed = 0;
         EwasPressed = false;
         functions = eventHandler.GetComponent<EventFunctions>();
@@ -437,7 +438,7 @@ public class ABHandler : MonoBehaviour
                 if (leftChoice)
                 {
                     //Leave House
-                    sceneManager.load("MapShaun");
+                    sceneManager.load("FinalMap");
                     hasBeenOutside = true;
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
@@ -456,7 +457,7 @@ public class ABHandler : MonoBehaviour
                 if (leftChoice)
                 {
                     //Leave House
-                    sceneManager.load("Gavin_test");
+                    sceneManager.load("FinalHouse");
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
