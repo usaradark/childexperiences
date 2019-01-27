@@ -7,14 +7,14 @@ using TMPro;
 public class StatsManagerController : MonoBehaviour
 {
     public float playerHP;
-    public float playerHPGain;
     public float playerHPLoss;
+    //public int playerHPLoss;
     public float momHP;
-    public float momHPGain;
     public float momHPLoss;
+    //public int momHPLoss;
     public float shelterHP;
-    public float shelterHPGain;
     public float shelterHPLoss;
+    //public float shelterHPLoss;
 
     public bool fireIsLit;
     public bool holeIsPatched;
@@ -31,70 +31,52 @@ public class StatsManagerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    //move to after any call that alters values
-        
+
     }
     
-    //Increases player HP by playerHPGain value
-    public void IncreasePlayerHP()
+    //Update player HP by delta
+    public void UpdatePlayerHP(float delta)
     {
-        playerHP += playerHPGain;
+        playerHP += delta;
         UpdateUI();
     }
-    public void IncreaseMomHP()
+    public void UpdateMomHP(float delta)
     {
-        momHP += momHPGain;
+        momHP += delta;
         UpdateUI();
     }
-    public void IncreaseShelterHP()
+    public void UpdateShelterHP(float delta)
     {
-        shelterHP += shelterHPGain;
-        UpdateUI();
-    }
-
-    //Decrease player HP by playerHPLoss value
-    public void DecreasePlayerHP()
-    {
-        playerHP -= playerHPLoss;
-        UpdateUI();
-    }
-    public void DecreaseMomHP()
-    {
-        momHP -= momHPLoss;
-        UpdateUI();
-    }
-    public void DecreaseShelterHP()
-    {
-        shelterHP -= shelterHPLoss;
+        shelterHP += delta;
         UpdateUI();
     }
 
     //Sets the desired loss rate to newLoss
-    public void SetPlayerLossRate(float newLoss)
+    public void UpdatePlayerLossRate(float newLoss)
     {
-        playerHPLoss = newLoss;
+        playerHPLoss *= newLoss;
     }
-    public void SetMomLossRate(float newLoss)
+    public void UpdateMomLossRate(float newLoss)
     {
-        momHPLoss = newLoss;
+        momHPLoss *= newLoss;
     }
-    public void SetShelterLossRate(float newLoss)
+    public void UpdateShelterLossRate(float newLoss)
     {
-        shelterHPLoss = newLoss;
+        shelterHPLoss *= newLoss;
     }
 
     //adds newVal to the current desired inventory stat
-    public void AddToFood(int newVal)
+    public void UpdateFood(int newVal)
     {
         myFood += newVal;
         UpdateUI();
     }
-    public void AddToWood(int newVal)
+    public void UpdateWood(int newVal)
     {
         myWood += newVal;
         UpdateUI();
     }
-    public void AddToMedicine(int newVal)
+    public void UpdateMedicine(int newVal)
     {
         myMedicine += newVal;
         UpdateUI();
