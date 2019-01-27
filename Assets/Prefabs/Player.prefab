@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7762520765636981117}
   - component: {fileID: 7762520765636981114}
   - component: {fileID: 7762520765636981115}
+  - component: {fileID: 8712241068639117868}
   - component: {fileID: 6084962795937530006}
   - component: {fileID: 7762520765636981112}
   m_Layer: 0
@@ -94,6 +95,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8712241068639117868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762520765636981113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77aee971797b8a94187209ab5f3c6b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charaSpeed: 3
 --- !u!114 &6084962795937530006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088e45959b5ceae48a126872987d46fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charaSpeed: 0
+  coinFlipHeads: 0
   eventHandler: {fileID: 0}
   statManager: {fileID: 0}
   panel: {fileID: 0}

@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class ABHandler : MonoBehaviour
 {
     public bool coinFlipHeads;
-    public float charaSpeed;
+    //public float charaSpeed;
     public GameObject eventHandler;
     public GameObject statManager;
     public GameObject panel;
 
-    private CharacterController myController;
+    //private CharacterController myController;
     private EventFunctions functions;
 
     private StatsManagerController smc;
@@ -27,7 +27,7 @@ public class ABHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myController = GetComponent<CharacterController>();
+        //myController = GetComponent<CharacterController>();
         functions = eventHandler.GetComponent<EventFunctions>();
         smc = statManager.GetComponent<StatsManagerController>();
         currentTrigger = "";
@@ -38,19 +38,7 @@ public class ABHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
-    }
-
-    private void MovePlayer()
-    {
-        if (canControl)
-        {
-            float moveX = Input.GetAxis("Horizontal");
-            float moveY = Input.GetAxis("Vertical");
-            Vector3 playerMove = new Vector3(moveX, 0.0f, moveY);
-            myController.SimpleMove(playerMove * charaSpeed);
-        }
-
+        
     }
 
     private void OnTriggerStay(Collider collider)
@@ -119,6 +107,7 @@ public class ABHandler : MonoBehaviour
                 case "Door":
                     if (!hasBeenOutside)
                     {
+                        hasBeenOutside = true;
                         panel.transform.GetChild(0).GetComponent<Text>().text = "Leave house?";
                     }
                     break;
