@@ -11,6 +11,7 @@ public class ABHandler : MonoBehaviour
     public GameObject eventHandler;
     public GameObject statManager;
     public GameObject panel;
+    public GameObject sceneHandler;
 
     private Text panelMainText;
     private Text buttonAText;
@@ -19,6 +20,7 @@ public class ABHandler : MonoBehaviour
     private EventFunctions functions;
 
     private StatsManagerController smc;
+    private SceneInteract sceneManager;
     private bool hasBeenOutside;
 
     public bool canControl;
@@ -34,6 +36,7 @@ public class ABHandler : MonoBehaviour
         smc = statManager.GetComponent<StatsManagerController>();
         canControl = true;
         hasBeenOutside = false;
+        sceneManager = sceneHandler.GetComponent<SceneInteract>();
         panelMainText = panel.transform.GetChild(0).GetComponent<Text>();
         buttonAText = panel.transform.GetChild(1).GetChild(0).GetComponent<Text>();
         buttonBText = panel.transform.GetChild(2).GetChild(0).GetComponent<Text>();
@@ -42,7 +45,11 @@ public class ABHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameOver)
+        {
+            EndGame();
+        }
+            
     }
 
     private void OnTriggerStay(Collider collider)
@@ -258,6 +265,7 @@ public class ABHandler : MonoBehaviour
                 if (leftChoice)
                 {
                     //Sleep
+                    hasBeenOutside = false;
                     functions.NightEvent();
                 }
                 panel.gameObject.SetActive(false);
@@ -386,7 +394,7 @@ public class ABHandler : MonoBehaviour
             case "Fire":
                 if (leftChoice)
                 {
-                    Debug.Log("make the fire");
+                    //Debug.Log("make the fire");
                     functions.CreateFire();
                 }
                 panel.gameObject.SetActive(false);
@@ -400,7 +408,8 @@ public class ABHandler : MonoBehaviour
                 if (leftChoice)
                 {
                     //Leave House
-                    //function to leave house called here
+                    sceneManager.load("Gavin_new 1");
+                    hasBeenOutside = true;
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
@@ -670,6 +679,11 @@ public class ABHandler : MonoBehaviour
         {
             momDead = true;
         }
+    }
+
+    private void EndGame()
+    {
+        //Call end game script here
     }
 
     public void A()

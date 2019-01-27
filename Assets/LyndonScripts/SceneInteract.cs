@@ -15,7 +15,6 @@ public class SceneInteract : MonoBehaviour
                 DontDestroyOnLoad(persistantObjects[i]);
             }
         }
-
     }
     
 
