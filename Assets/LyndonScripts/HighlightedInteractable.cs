@@ -26,6 +26,7 @@ public class HighlightedInteractable : MonoBehaviour
     public GameObject player;
     private UnityEngine.AI.NavMeshAgent playerAgent;
 
+    [Header("Animator")]
     public Animator animator;
 
     #region Monobehavior API;
