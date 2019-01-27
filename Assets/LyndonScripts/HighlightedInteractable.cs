@@ -12,6 +12,8 @@ public class HighlightedInteractable : MonoBehaviour
     public GameObject panel;
     public Text promptLocation;
 
+    public GameObject interText;
+
     public dialogue_option dia_opt;
 
     public string locationName;
@@ -34,7 +36,7 @@ public class HighlightedInteractable : MonoBehaviour
     private void Start()
     {
         panel.SetActive(false);
-        interact.gameObject.SetActive(false);
+        //interact.gameObject.SetActive(false);
         playerAgent = player.GetComponent<NavMeshAgent>();
     }
 
@@ -43,6 +45,7 @@ public class HighlightedInteractable : MonoBehaviour
         lastPosition = player.transform.position;
 
         player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 0, player.transform.eulerAngles.z);
+
     }
 
     // Start is called before the first frame update
@@ -73,7 +76,7 @@ public class HighlightedInteractable : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         isInLocation = true;
-        interact.gameObject.SetActive(true);
+        //interact.gameObject.SetActive(true);
         if (Input.GetKeyDown(KeyCode.E))
         {
             panel.SetActive(true);
@@ -85,7 +88,7 @@ public class HighlightedInteractable : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         isInLocation = false;
-        interact.gameObject.SetActive(false);
+        //interact.gameObject.SetActive(false);
     }
 
     #endregion
