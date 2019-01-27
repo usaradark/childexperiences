@@ -9,6 +9,7 @@ TagManager:
   - Hole
   - Location
   - Ignore
+  - Stove
   layers:
   - Default
   - TransparentFX

@@ -13,9 +13,8 @@ public class HouseCharacterController : MonoBehaviour
     private HouseManagerController houseController;
 
     private StatsManagerController smc;
-    private bool waiting;
+    //private bool waiting;
     public GameObject panel;
-
 
     // Start is called before the first frame update
     void Start()
@@ -23,16 +22,16 @@ public class HouseCharacterController : MonoBehaviour
         myController = GetComponent<CharacterController>();
         houseController = houseManager.GetComponent<HouseManagerController>();
         smc = statManager.GetComponent<StatsManagerController>();
-        waiting = false;
+        //waiting = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!waiting)
-        {
+        //if (!waiting)
+        //{
             MovePlayer();
-        }
+       // }
     }
 
     private void MovePlayer()
@@ -45,47 +44,48 @@ public class HouseCharacterController : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        if (Input.GetKeyDown(KeyCode.E) && !waiting)
+        if (Input.GetKeyDown(KeyCode.E))
         {
             panel.gameObject.SetActive(true);
             Time.timeScale = 0;
+            print(panel.transform.GetChild(0).GetComponent<Text>().text);
             switch (collider.tag)
             {
                 case "Door":
-                    //Debug.Log("Leave?");
                     panel.transform.GetChild(0).GetComponent<Text>().text = "Leave?";
                     break;
                 case "Stove":
                     if (smc.myFood > 0)
                     {
-                        Debug.Log("Make food?");
-                        waiting = true;
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "Make food?";
                     }
-                    //Debug.Log("Make food?");
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "Make food?";
                     break;
                 case "Hole":
-                    //Debug.Log("Repairing house");
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "Repairing house?";
-                    houseController.RepairHouse();
+                    if (smc.myWood > 0)
+                    {
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "Repairing house?";
+                        houseController.RepairHouse();
+                    }
                     break;
                 case "Fireplace":
-                    //Debug.Log("Build fire?");
-                    panel.transform.GetChild(0).GetComponent<Text>().text = "Build Fire?";
-                    houseController.BuildFire();
+                    if (smc.myWood > 0)
+                    {
+                        panel.transform.GetChild(0).GetComponent<Text>().text = "Build Fire?";
+                        houseController.BuildFire();
+                    }
                     break;
             }
         }
     }
 
-    public void Nah()
+    public void No()
     {
         panel.transform.GetChild(0).GetComponent<Text>().text = "";
         Time.timeScale = 1;
         panel.SetActive(false); 
     }
 
-    public void Yee()
+    public void Yes()
     {
         panel.transform.GetChild(0).GetComponent<Text>().text = "";
         Time.timeScale = 1;

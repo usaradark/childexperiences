@@ -42,13 +42,13 @@ public class HouseManagerController : MonoBehaviour
     public void FeedSelf()
     {
         smc.IncreasePlayerHP();
-        smc.AddToMedicine(-1);
+        smc.AddToFood(-1);
     }
 
     public void HealMom()
     {
         smc.SetMomLossRate(smc.momHPLoss / 2);
-        smc.AddToFood(-1);
+        smc.AddToMedicine(-1);
     }
 
     public void FeedMom()
