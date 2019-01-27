@@ -67,6 +67,9 @@ public class ABHandler : MonoBehaviour
             string msg = "";
             switch (currentTag)
             {
+                case "Bed":
+                    panelMainText.text = "Sleep?";
+                    break;
                 case "Stove":
                     if (smc.myFood > 0)
                         panelMainText.text = "Make Food?";
@@ -116,6 +119,14 @@ public class ABHandler : MonoBehaviour
                     {
                         hasBeenOutside = true;
                         panelMainText.text = "Leave house?";
+                    }
+                    else
+                    {
+                        //You've already left for the day
+                        panel.SetActive(false);
+                        panelMainText.text = "";
+                        currentTag = "";
+                        canControl = true;
                     }
                     break;
 
@@ -246,6 +257,17 @@ public class ABHandler : MonoBehaviour
     {
         switch (tag)
         {
+            case "Bed":
+                if (leftChoice)
+                {
+                    //Sleep
+                    functions.NightEvent();
+                }
+                panel.gameObject.SetActive(false);
+                panelMainText.text = "";
+                currentTag = "";
+                canControl = true;
+                break;
             case "Stove":
                 if (leftChoice)
                 {

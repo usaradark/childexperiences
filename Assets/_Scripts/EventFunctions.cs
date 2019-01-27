@@ -46,6 +46,42 @@ public class EventFunctions : MonoBehaviour
         ZeroAll();
     }
 
+    private void NightRandomEvent()
+    {
+        int randomNum = Random.Range(0, 6);
+        switch (randomNum)
+        {
+            case 0:
+                HeavyRain();
+                break;
+            case 1:
+                SnowStorm();
+                break;
+            case 2:
+                MomExtraSick();
+                break;
+            case 3:
+                Burglar();
+                break;
+            case 4:
+                Nomads();
+                break;
+            case 5:
+                QuietNight();
+                break;
+        }
+    }
+
+    public void NightEvent()
+    {
+        //NightRandomEvent();
+        //UpdateAll();
+        ZeroAll();
+        deltaSelfHealth = (int)(-1 * existingValues.playerHPLoss);
+        deltaMomHealth = (int)(-1 * existingValues.momHPLoss);
+        deltaShelterHealth = (int)(-1 * existingValues.shelterHPLoss);
+    }
+
     public void ChurchA1()
     {
         ZeroAll();
