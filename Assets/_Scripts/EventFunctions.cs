@@ -84,14 +84,15 @@ public class EventFunctions : MonoBehaviour
 
     public void NightEvent()
     {
-        NightRandomEvent();
-        UpdateAll();
+        //NightRandomEvent();
+        ZeroAll();
         deltaSelfHealth = (int)(-1 * existingValues.playerHPLoss);
         deltaMomHealth = (int)(-1 * existingValues.momHPLoss);
         deltaShelterHealth = (int)(-1 * existingValues.shelterHPLoss);
         existingValues.fireIsLit = false;
         selfMedApplied /= 2;
         momMedApplied /= 2;
+        existingValues.myDays++;
     }
 
     public void ChurchA1()
