@@ -843,6 +843,26 @@ PrefabInstance:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5466380233406586906, guid: 00c7321a05ea0b64780c602799e1ae32,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466380233406586906, guid: 00c7321a05ea0b64780c602799e1ae32,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466380233406586906, guid: 00c7321a05ea0b64780c602799e1ae32,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466380233406586906, guid: 00c7321a05ea0b64780c602799e1ae32,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1830416974581937743, guid: 00c7321a05ea0b64780c602799e1ae32,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1036,7 +1056,7 @@ GameObject:
   - component: {fileID: 1976664895}
   m_Layer: 0
   m_Name: Stove
-  m_TagString: Stove
+  m_TagString: Hospital
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
