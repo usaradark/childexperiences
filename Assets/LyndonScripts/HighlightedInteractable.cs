@@ -17,9 +17,6 @@ public class HighlightedInteractable : MonoBehaviour
     public string locationName;
     bool mouseOver = false;
 
-    public Button yes;
-    public Button no;
-
     Camera cam;
     public LayerMask groundLayer;
     public GameObject player;
@@ -70,15 +67,6 @@ public class HighlightedInteractable : MonoBehaviour
         {
             playerAgent.SetDestination(gameObject.transform.position);
 
-            yes.onClick.RemoveAllListeners();
-            no.onClick.RemoveAllListeners();
-
-            yes.onClick.AddListener(setLocationTagBack);
-            no.onClick.AddListener(setLocationTagBack);
-
-            yes.onClick.AddListener(dia_opt.yes);
-            no.onClick.AddListener(dia_opt.no);
-
             setLocationTagToIgnore();
         }
     }
@@ -108,7 +96,11 @@ public class HighlightedInteractable : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        isInLocation = true;           
+        isInLocation = true;
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            print(locationName);
+        }
     }
 
     private void OnTriggerExit(Collider other)
