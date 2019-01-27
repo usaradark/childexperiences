@@ -16,6 +16,9 @@ public class StatsManagerController : MonoBehaviour
     public float shelterHPGain;
     public float shelterHPLoss;
 
+    public bool fireIsLit;
+    public bool holeIsPatched;
+
     public int myFood;
     public int myMedicine;
     public int myWood;

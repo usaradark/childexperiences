@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HouseCharacterController : MonoBehaviour
+public class ABHandler : MonoBehaviour
 {
+
     public float charaSpeed;
     public GameObject eventHandler;
     public GameObject statManager;
@@ -40,7 +41,7 @@ public class HouseCharacterController : MonoBehaviour
 
     private void MovePlayer()
     {
-        if(canControl)
+        if (canControl)
         {
             float moveX = Input.GetAxis("Horizontal");
             float moveY = Input.GetAxis("Vertical");
@@ -63,7 +64,7 @@ public class HouseCharacterController : MonoBehaviour
             //OperateOnTag(collider.gameObject.tag);
 
             //print(panel.transform.GetChild(0).GetComponent<Text>().text);
-            
+
         }
     }
 
@@ -72,7 +73,7 @@ public class HouseCharacterController : MonoBehaviour
         switch (tag)
         {
             case "Stove":
-                if(leftChoice)
+                if (leftChoice)
                 {
                     currentTag = "Stove2";
                     panel.transform.GetChild(0).GetComponent<Text>().text = "STOVE2";
@@ -89,7 +90,7 @@ public class HouseCharacterController : MonoBehaviour
                 break;
 
             case "Stove2":
-                if(leftChoice)
+                if (leftChoice)
                 {
                     currentTag = "Stove3";
                     panel.transform.GetChild(0).GetComponent<Text>().text = "STOVE3";
@@ -121,8 +122,8 @@ public class HouseCharacterController : MonoBehaviour
                 }
 
                 break;
-            
-                
+
+
         }
 
     }
