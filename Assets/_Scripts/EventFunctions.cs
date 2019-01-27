@@ -215,24 +215,28 @@ public class EventFunctions : MonoBehaviour
     {
         ZeroAll();
         deltaSelfHealth = 25;
+        deltaFood = -1;
     }
 
     public void MomEatFood()
     {
         ZeroAll();
         deltaMomHealth = 25;
+        deltaFood = -1;
     }
 
     public void SelfTakeMedicine()
     {
         ZeroAll();
         deltaSelfHealthDecreaseRate = .5f;
+        deltaMedicine = -1;
     }
 
     public void MomTakeMedicine()
     {
         ZeroAll();
         deltaMomHealthDecreaseRate = .5f;
+        deltaMedicine = -1;
     }
 
     public void HeavyRain()
