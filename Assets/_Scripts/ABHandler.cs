@@ -112,7 +112,7 @@ public class ABHandler : MonoBehaviour
 
                 //outdoor
                 case "Church":
-                    if(true)//A
+                    if(coinFlipHeads)//A
                     {
                         currentTag = "ChurchA";
                         msg = "You hear a series of discordant hymnals echoing from the windows of the old church." +
@@ -134,7 +134,7 @@ public class ABHandler : MonoBehaviour
                     break;
 
                 case "Harbor":
-                    if (true)//A
+                    if (coinFlipHeads)//A
                     {
                         currentTag = "HarborA";
                         msg = "The waves are breaking with aggressive frequency, you can’t imagine any fish that would be catchable in such tumultuous seas.";
@@ -156,7 +156,7 @@ public class ABHandler : MonoBehaviour
                     break;
 
                 case "Hospital":
-                    if (true)//A
+                    if (coinFlipHeads)//A
                     {
                         currentTag = "HospitalA";
                         msg = "To your surprise, you find a small staff of EMTs operating a makeshift emergency room in a circle of tireless ambulances outside the hospital.";

@@ -48,7 +48,7 @@ public class EventFunctions : MonoBehaviour
     public void ChurchA1()
     {
         ZeroAll();
-        deltaWood = 3;
+        deltaWood = 2;
         deltaSelfHealth = -10;
     }
 
@@ -87,13 +87,13 @@ public class EventFunctions : MonoBehaviour
     {
         ZeroAll();
         deltaWood = -2;
-        deltaFood = +5;
+        deltaFood = 4;
     }
 
     public void HarborB2()
     {
         ZeroAll();
-        deltaFood = 2;
+        deltaFood = 1;
     }
 
     public void HospitalA1()
@@ -234,6 +234,68 @@ public class EventFunctions : MonoBehaviour
         ZeroAll();
         deltaMomHealthDecreaseRate = .5f;
     }
+
+    public void HeavyRain()
+    {
+        ZeroAll();
+        deltaSelfHealth = -10;
+        deltaMomHealth = -10;
+    }
+
+    public void SnowStorm()
+    {
+        ZeroAll();
+        if (existingValues.fireIsLit)
+        {
+            
+        }
+        else
+        {
+            deltaShelterHealth = -20;
+        }
+
+    }
+
+
+
+    public void MomExtraSick()
+    {
+        ZeroAll();
+        if(existingValues.fireIsLit == true)
+        {
+
+        }
+        else
+        {
+            deltaMomHealth = -10;
+        }
+    }
+
+    public void Burglar()
+    {
+        ZeroAll();
+        if(existingValues.holeIsPatched)
+        {
+            
+        }
+        else
+        {
+            deltaFood = -1;
+            deltaMedicine = -1;
+        }
+    }
+
+    public void Nomads()
+    {
+        ZeroAll();
+        deltaFood = 1;
+    }
+
+    public void QuietNight()
+    {
+        ZeroAll();
+    }
+
 
     // Start is called before the first frame update
     void Start()
