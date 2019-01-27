@@ -194,6 +194,26 @@ PrefabInstance:
       propertyPath: myMedicine
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2084253914411273703, guid: 681742e305b06a34b95c7475cc06f9b1,
+        type: 3}
+      propertyPath: momHPLoss
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084253914411273703, guid: 681742e305b06a34b95c7475cc06f9b1,
+        type: 3}
+      propertyPath: momHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084253914411273703, guid: 681742e305b06a34b95c7475cc06f9b1,
+        type: 3}
+      propertyPath: playerHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084253914411273703, guid: 681742e305b06a34b95c7475cc06f9b1,
+        type: 3}
+      propertyPath: playerHPLoss
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 681742e305b06a34b95c7475cc06f9b1, type: 3}
 --- !u!1 &108727234 stripped
@@ -965,7 +985,7 @@ GameObject:
   - component: {fileID: 1325677966}
   m_Layer: 0
   m_Name: Hole
-  m_TagString: Hole
+  m_TagString: Med Cabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -271,6 +271,8 @@ public class ABHandler : MonoBehaviour
                 canControl = true;
                 panel.gameObject.SetActive(false);
                 panel.transform.GetChild(0).GetComponent<Text>().text = "";
+                panel.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Yes";
+                panel.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "No";
                 currentTag = "";
                 break;
 

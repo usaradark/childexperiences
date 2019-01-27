@@ -43,6 +43,7 @@ public class EventFunctions : MonoBehaviour
         existingValues.UpdateFood(deltaFood);
         existingValues.UpdateWood(deltaWood);
         existingValues.UpdateMedicine(deltaMedicine);
+        ZeroAll();
     }
 
     public void ChurchA1()
@@ -305,6 +306,7 @@ public class EventFunctions : MonoBehaviour
     void Start()
     {
         existingValues = statsManager.GetComponent<StatsManagerController>();
+        ZeroAll();
     }
 
     // Update is called once per frame
