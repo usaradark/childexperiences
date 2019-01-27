@@ -488,7 +488,6 @@ public class ABHandler : MonoBehaviour
                 panel.gameObject.SetActive(false);
                 panelMainText.text = "";
                 currentTag = "";
-                //canControl = true;
                 break;
             case "ChurchB":
                 okPanel.gameObject.SetActive(true);
@@ -510,15 +509,16 @@ public class ABHandler : MonoBehaviour
                 break;
 
             case "HarborA":
-                if(leftChoice)
+                okPanel.gameObject.SetActive(true);
+                if (leftChoice)
                 {
-                    Debug.Log("Most of what you find is waterlogged and unusable. However, you manage to salvage a few planks from what is left of the lifeguard tower.");
+                    panelOkText.text = "Most of what you find is waterlogged and unusable. However, you manage to salvage a few planks from what is left of the lifeguard tower.";
                     functions.HarborA1();
                 }
                 else
                 {
-                    Debug.Log("Your limbs are heavy from the journey, and the crashing waves entrances you with its rhythmic relaxing sound, reminding you of the times" +
-                        "your dad brought you to the beach, you smile at the memory as your drift off to a peaceful deep sleep.");
+                    panelOkText.text = "Your limbs are heavy from the journey, and the crashing waves entrances you with its rhythmic relaxing sound, reminding you of the times" +
+                        "your dad brought you to the beach, you smile at the memory as your drift off to a peaceful deep sleep.";
                     functions.HarborA2();
                 }
                 panel.gameObject.SetActive(false);
@@ -526,18 +526,19 @@ public class ABHandler : MonoBehaviour
                 currentTag = "";
                 break;
             case "HarborB":
+                okPanel.SetActive(true);
                 if (leftChoice)
                 {
-                    Debug.Log("You give him your wood pieces and he gives you a bucket of his catch. You fall over slightly at the weight of the bucket." +
-                        "You thank him and he winks at you.");
+                    panelOkText.text = "You give him your wood pieces and he gives you a bucket of his catch. You fall over slightly at the weight of the bucket." +
+                        "You thank him and he winks at you.";
                     functions.HarborB1();
                 }
                 else
                 {
-                    Debug.Log("You notice that he has a spare rod next to him. " +
+                    panelOkText.text = "You notice that he has a spare rod next to him. " +
                         "You ask him if you can use the rod to catch fish. He agrees to lend you his spare rod and you fish alongside him." +
                         "After what seemed like an eternity, you feel a tug on your line. After struggling for what felt like hours, you catch a decent-sized fish." +
-                        "The fisherman congratulates you on your catch while you return his equipment.");
+                        "The fisherman congratulates you on your catch while you return his equipment.";
                     functions.HarborB2();
                 }
                 panel.gameObject.SetActive(false);
@@ -547,82 +548,83 @@ public class ABHandler : MonoBehaviour
                 break;
 
             case "HospitalA":
+                okPanel.SetActive(true);
                 if (leftChoice)
                 {
-                    Debug.Log("You cautiously approach the circle and one of the EMTs looks at you with fatherly concern." +
+                    panelOkText.text = "You cautiously approach the circle and one of the EMTs looks at you with fatherly concern." +
                         "“Jesus kid, you look like you have had a rough week, let us take care of those cuts and bruises.” After tending to your injuries," +
-                        "you feel much better and thank them deeply before returning home.");
+                        "you feel much better and thank them deeply before returning home.";
                     functions.HospitalA1();
                 }
                 else
                 {
-                    Debug.Log("You approach with what food you have and ask them men if they can trade any supplies. They look like they haven’t eaten much and with a" +
-                        "quick glance around they toss you 2 packets of medicine in exchange for a can of food.");
+                    panelOkText.text = "You approach with what food you have and ask them men if they can trade any supplies. They look like they haven’t eaten much and with a" +
+                        "quick glance around they toss you 2 packets of medicine in exchange for a can of food.";
                     functions.HospitalA2();
                 }
                 panel.gameObject.SetActive(false);
                 panelMainText.text = "";
                 currentTag = "";
-                canControl = true;
                 break;
             case "HospitalB":
+                okPanel.SetActive(true);
                 if (leftChoice)
                 {
-                    Debug.Log("Underneath the layers of moldy, leftover food and empty trays you manage to find a few unspoiled cans of food." +
-                        "You mutter yourself that hospital food is better than nothing.");
+                    panelOkText.text = "Underneath the layers of moldy, leftover food and empty trays you manage to find a few unspoiled cans of food." +
+                        "You mutter yourself that hospital food is better than nothing.";
                     functions.HospitalB1();
                 }
                 else
                 {
-                    Debug.Log("Knocked over shelves and empty pill bottles are strewn across the floor. You manage to crawl under a pair of shelves" +
-                        "and find a couple medicine packs wedged behind one of the shelves.");
+                    panelOkText.text = "Knocked over shelves and empty pill bottles are strewn across the floor. You manage to crawl under a pair of shelves" +
+                        "and find a couple medicine packs wedged behind one of the shelves.";
                     functions.HospitalB2();
                 }
                 panel.gameObject.SetActive(false);
                 panelMainText.text = "";
                 currentTag = "";
-                canControl = true;
                 break;
 //hardware
             case "HardwareA":
+                okPanel.SetActive(true);
                 if (leftChoice)
                 {
-                    Debug.Log("In the lumber section you manage to find a few relatively undamaged boards of plywood. You awkwardly hoist them onto your back and begin the walk home.");
+                    panelOkText.text = "In the lumber section you manage to find a few relatively undamaged boards of plywood. You awkwardly hoist them onto your back and begin the walk home.";
                     functions.HardwareA1();
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 else
                 {
-                    Debug.Log("Hammers, screwdrivers, nails: it’s all still here. You grab a small bucket and patrol the aisles grabbing whatever you recognized from that DIY house projects show your dad used to watch.");
+                    panelOkText.text = "Hammers, screwdrivers, nails: it’s all still here. You grab a small bucket and patrol the aisles grabbing whatever you recognized from that DIY house projects show your dad used to watch.";
                     functions.HardwareA2();
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 break;
 //Hardware
             case "HardwareB":
+                okPanel.SetActive(true);
                 if (leftChoice)
                 {
-                    Debug.Log("You see the man sanding down the damaged planks into finer lumber. He looks up again from his work and sees you carefully walking towards him. He pulls off his glasses and beckons you over. “Hey there, kid. Could you run over there and get me my tools? You do that and I’ll make sure you don’t walk home empty handed.” You quickly make it to his shed and grab his stuff. He thanks you and tells you to grab as much wood as you can.");
+                    panelOkText.text = "You see the man sanding down the damaged planks into finer lumber. He looks up again from his work and sees" +
+                        "you carefully walking towards him. He pulls off his glasses and beckons you over. “Hey there, kid. Could you run over there and get me my tools?" +
+                        "You do that and I’ll make sure you don’t walk home empty handed.” You quickly make it to his shed and grab his stuff. He thanks you and tells you to" +
+                        "grab as much wood as you can.";
                     functions.HardwareB1();
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 else
                 {
-                    Debug.Log("Who knows what that guy was up to, especially with all those sharp tools laying about, better to play it safe. You walk to the old employee’s lounge and find some canned goods. You take them hoping the man doesn’t mind.");
+                    panelOkText.text = "Who knows what that guy was up to, especially with all those sharp tools laying about, better to play it safe. You walk to the old employee’s lounge and find some canned goods. You take them hoping the man doesn’t mind.";
                     functions.HardwareB2();
                     panel.gameObject.SetActive(false);
                     panelMainText.text = "";
                     currentTag = "";
-                    canControl = true;
                 }
                 break;
 //forest
