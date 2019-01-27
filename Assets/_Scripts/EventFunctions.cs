@@ -159,7 +159,7 @@ public class EventFunctions : MonoBehaviour
     public void HospitalA2()
     {
         ZeroAll();
-        if (existingValues.myFood < 1)
+        if (existingValues.myFood >= 1)
         {
             deltaFood = -1;
             deltaMedicine = 2;
@@ -242,7 +242,7 @@ public class EventFunctions : MonoBehaviour
     public void GroceryB1()
     {
         ZeroAll();
-        if (existingValues.myFood < 1)
+        if (existingValues.myFood >= 1)
         {
             deltaMedicine = -1;
             deltaFood = 3;
@@ -254,7 +254,7 @@ public class EventFunctions : MonoBehaviour
     public void GroceryB2()
     {
         ZeroAll();
-        if (existingValues.myWood < 1)
+        if (existingValues.myWood >= 1)
         {
             deltaWood = -1;
             deltaFood = 3;
