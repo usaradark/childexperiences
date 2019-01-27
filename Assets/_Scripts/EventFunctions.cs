@@ -84,8 +84,8 @@ public class EventFunctions : MonoBehaviour
 
     public void NightEvent()
     {
-        NightRandomEvent();
-        UpdateAll();
+        //NightRandomEvent();
+        ZeroAll();
         deltaSelfHealth = (int)(-1 * existingValues.playerHPLoss);
         deltaMomHealth = (int)(-1 * existingValues.momHPLoss);
         deltaShelterHealth = (int)(-1 * existingValues.shelterHPLoss);
