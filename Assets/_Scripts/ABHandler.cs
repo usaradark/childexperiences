@@ -62,7 +62,12 @@ public class ABHandler : MonoBehaviour
             {
                 case "Stove":
                     if (smc.myFood > 0)
+                    {
                         panel.transform.GetChild(0).GetComponent<Text>().text = "Make Food?";
+                        panel.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Yes";
+                        panel.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "No";
+                    }
+
                     else
                     {
                         panel.SetActive(false);
@@ -73,7 +78,12 @@ public class ABHandler : MonoBehaviour
                     break;
                 case "Hole":
                     if (smc.myWood > 1)
+                    {
                         panel.transform.GetChild(0).GetComponent<Text>().text = "Use wood to repair hole?";
+                        panel.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Yes";
+                        panel.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "No";
+                    }
+
                     else
                     {
                         panel.SetActive(false);
@@ -84,7 +94,12 @@ public class ABHandler : MonoBehaviour
                     break;
                 case "Med Cabinet":
                     if (smc.myMedicine > 0)
+                    {
                         panel.transform.GetChild(0).GetComponent<Text>().text = "Use medicine?";
+                        panel.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Yes";
+                        panel.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "No";
+                    }
+
                     else
                     {
                         panel.SetActive(false);
@@ -95,7 +110,12 @@ public class ABHandler : MonoBehaviour
                     break;
                 case "Fire":
                     if (smc.myWood > 1)
+                    {
                         panel.transform.GetChild(0).GetComponent<Text>().text = "Use wood to make Fire?";
+                        panel.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Yes";
+                        panel.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "No";
+                    }
+
                     else
                     {
                         panel.SetActive(false);
@@ -109,6 +129,8 @@ public class ABHandler : MonoBehaviour
                     {
                         hasBeenOutside = true;
                         panel.transform.GetChild(0).GetComponent<Text>().text = "Leave house?";
+                        panel.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Yes";
+                        panel.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "No";
                     }
                     break;
 
@@ -192,7 +214,7 @@ public class ABHandler : MonoBehaviour
                         currentTag = "HardwareB";
                         panel.transform.GetChild(0).GetComponent<Text>().text = "Your hear the sounds of construction ringing out from the back lot. You peek around the corner of the building and see a burly man sawing huge chunks of plywood into more manageable sections. He stops and stares at you for a while and continues to cut wood.";
                         panel.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Cautiously approach";
-                        panel.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "Back away cautiously and look elsewhere";
+                        panel.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "Back away carefuly and look elsewhere";
                     }
                     break;
 //Forest
@@ -334,6 +356,7 @@ public class ABHandler : MonoBehaviour
                 currentTag = "";
                 canControl = true;
                 break;
+
 
             //outdoors
             case "Door":
@@ -479,7 +502,7 @@ public class ABHandler : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Hammers, screwdrivers, nails: it’s all still here. You grab a small bucket and patrol the aisles grabbing whatever you recognized from that DIY house projects show your dad used to watch.");
+                    Debug.Log("Hammers, screwdrivers, nails: it’s all still here. You grab a small bucket and patrol the aisles grabbing whatever you recognized from that DIY house projects show your dad used to watch. This should make fixing up the house much easier.");
                     functions.HardwareA2();
                     panel.gameObject.SetActive(false);
                     panel.transform.GetChild(0).GetComponent<Text>().text = "";
