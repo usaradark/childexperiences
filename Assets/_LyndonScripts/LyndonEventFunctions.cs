@@ -24,6 +24,8 @@ public class LyndonEventFunctions : MonoBehaviour
     public AudioClip hammerHitClip;
     public AudioClip rainClip;
 
+    public GameObject fireplace;
+
     public void ZeroAll()
     {
         deltaFood = 0;
@@ -259,6 +261,7 @@ public class LyndonEventFunctions : MonoBehaviour
     public void CreateFire()
     {
         source.PlayOneShot(fireCraklingClip, 1f);
+        fireplace.gameObject.SetActive(true);
         ZeroAll();
         deltaWood = -2;
         deltaShelterHealth = 35;
