@@ -133,6 +133,9 @@ public class ABHandler : MonoBehaviour
                         canControl = true;
                     }
                     break;
+                case "House":
+                    panelMainText.text = "Enter house for the night?";
+                    break;
 
                 //outdoor
                 case "Church":
@@ -251,8 +254,6 @@ public class ABHandler : MonoBehaviour
                         buttonBText.text = "Trade Wood for food";
                     }
                     break;
-   
-
             }
         }
     }
@@ -423,6 +424,25 @@ public class ABHandler : MonoBehaviour
                     canControl = true;
                 }
                 break;
+            case "House":
+                if (leftChoice)
+                {
+                    //Leave House
+                    sceneManager.load("Gavin test");
+                    panel.gameObject.SetActive(false);
+                    panelMainText.text = "";
+                    currentTag = "";
+                    canControl = true;
+                }
+                else
+                {
+                    panel.gameObject.SetActive(false);
+                    panelMainText.text = "";
+                    currentTag = "";
+                    canControl = true;
+                }
+                break;
+
             case "ChurchA":
                 if (leftChoice)
                 {
