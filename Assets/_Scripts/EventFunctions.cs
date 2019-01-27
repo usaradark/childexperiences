@@ -79,7 +79,7 @@ public void ChurchA1()
     public void HarborB2()
     {
         ZeroAll();
-        deltaFood = 1;
+        deltaFood = 2;
     }
 
     public void HospitalA1()
@@ -133,7 +133,7 @@ public void ChurchA1()
     public void ForestA1()
     {
         ZeroAll();
-        deltaFood = 2;
+        deltaFood = 3;
     }
 
     public void ForestA2()
@@ -170,14 +170,14 @@ public void ChurchA1()
     {
         ZeroAll();
         deltaMedicine = -1;
-        deltaFood = 2;
+        deltaFood = 3;
     }
 
     public void GroceryB2()
     {
         ZeroAll();
         deltaWood = -1;
-        deltaFood = 2;
+        deltaFood = 3;
     }
 
     public void HomeRepairRoof()
