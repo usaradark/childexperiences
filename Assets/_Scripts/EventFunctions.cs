@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EventFunctions : MonoBehaviour
 {
-    public StatsManagerController existingValues;
+    private StatsManagerController existingValues;
 
-    
+    public GameObject statsManager;
     public int deltaFood;
     public int deltaMedicine;
     public int deltaWood;
@@ -24,16 +24,28 @@ public class EventFunctions : MonoBehaviour
         deltaMedicine = 0;
         deltaWood = 0;
         deltaMomHealth = 0;
-        deltaMomHealthDecreaseRate = 0;
+        deltaMomHealthDecreaseRate = 1;
         deltaSelfHealth = 0;
-        deltaSelfHealthDecreaseRate = 0;
+        deltaSelfHealthDecreaseRate = 1;
         deltaShelterHealth = 0;
-        deltaShelterHealthDecreaseRate = 0;
+        deltaShelterHealthDecreaseRate = 1;
         nextRepairTwiceAsEffective = false;
+    }
 
-}
+    public void UpdateAll()
+    {
+        existingValues.UpdatePlayerHP(deltaSelfHealth);
+        existingValues.UpdateMomHP(deltaMomHealth);
+        existingValues.UpdateShelterHP(deltaShelterHealth);
+        existingValues.UpdatePlayerLossRate(deltaSelfHealthDecreaseRate);
+        existingValues.UpdateMomLossRate(deltaMomHealthDecreaseRate);
+        existingValues.UpdateShelterLossRate(deltaShelterHealthDecreaseRate);
+        existingValues.UpdateFood(deltaFood);
+        existingValues.UpdateWood(deltaWood);
+        existingValues.UpdateMedicine(deltaMedicine);
+    }
 
-public void ChurchA1()
+    public void ChurchA1()
     {
         ZeroAll();
         deltaWood = 3;
@@ -226,7 +238,7 @@ public void ChurchA1()
     // Start is called before the first frame update
     void Start()
     {
-        
+        existingValues = statsManager.GetComponent<StatsManagerController>();
     }
 
     // Update is called once per frame
