@@ -72,7 +72,7 @@ public class ABHandler : MonoBehaviour
                     }
                     break;
                 case "Hole":
-                    if (smc.myWood > 0)
+                    if (smc.myWood > 1)
                         panel.transform.GetChild(0).GetComponent<Text>().text = "Use wood to repair hole?";
                     else
                     {
@@ -94,7 +94,7 @@ public class ABHandler : MonoBehaviour
                     }
                     break;
                 case "Fire":
-                    if (smc.myMedicine > 0)
+                    if (smc.myWood > 1)
                         panel.transform.GetChild(0).GetComponent<Text>().text = "Use wood to make Fire?";
                     else
                     {
@@ -245,6 +245,8 @@ public class ABHandler : MonoBehaviour
                     //Who to give food to?
                     currentTag = "Stove2";
                     panel.transform.GetChild(0).GetComponent<Text>().text = "Feed Mom or Yourself?";
+                    panel.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Feed Mom";
+                    panel.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "Feed Yourself";
                 }
                 else
                 {
@@ -290,6 +292,8 @@ public class ABHandler : MonoBehaviour
                     //Who to give medicine to?
                     currentTag = "Med Cabinet 2";
                     panel.transform.GetChild(0).GetComponent<Text>().text = "Heal Mom or Yourself?";
+                    panel.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Heal Mom";
+                    panel.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "Heal Yourself";
                 }
                 else
                 {
