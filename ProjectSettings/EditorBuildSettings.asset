@@ -8,16 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 1061c09e44acfc24aafc0601c47f0e9e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Shaun.unity
     guid: ac0fc2c4c801d774eb322e062499f7d5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gavin_new.unity
     guid: bc8e5757d4c3d274abda36fc29aa6f05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gavin_new 1.unity
     guid: 27e1b1410f0389b438ec8805c8f2005f
   - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: b14e046a6830de14c9491892edc7d336
+  - enabled: 1
+    path: Assets/Scenes/Gavin_test.unity
+    guid: 234f93664e5f0ac4db6dd655fee54e8e
+  - enabled: 1
+    path: Assets/MapScenes/MapShaun.unity
+    guid: 21b8e9ca7a5ca9b40b2cabb5ae9b44a6
   m_configObjects: {}

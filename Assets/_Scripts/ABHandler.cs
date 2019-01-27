@@ -11,9 +11,11 @@ public class ABHandler : MonoBehaviour
     public GameObject eventHandler;
     public GameObject statManager;
     public GameObject panel;
+    public GameObject okPanel;
     public GameObject sceneHandler;
 
     private Text panelMainText;
+    private Text panelOkText;
     private Text buttonAText;
     private Text buttonBText;
 
@@ -46,6 +48,9 @@ public class ABHandler : MonoBehaviour
         panelMainText = panel.transform.GetChild(0).GetComponent<Text>();
         buttonAText = panel.transform.GetChild(1).GetChild(0).GetComponent<Text>();
         buttonBText = panel.transform.GetChild(2).GetChild(0).GetComponent<Text>();
+        panelOkText = okPanel.transform.GetChild(0).GetComponent<Text>();
+        panelOkText.text = "";
+        okPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -461,40 +466,41 @@ public class ABHandler : MonoBehaviour
                 break;
 
             case "ChurchA":
+                okPanel.gameObject.SetActive(true);
                 if (leftChoice)
                 {
-                    Debug.Log("You begin stealthily picking through what remains of the pews, keeping a close eye on the man." +
+                    panelOkText.text = "You begin stealthily picking through what remains of the pews, keeping a close eye on the man." +
                         "However, he hears you and turns and charges you with fanatical speed. You try to run but slip on pages torn from bibles." +
-                        "“SINNER” He cries as he swings his whip at you, it scrapes across your back just as you escape.");
+                        "“SINNER” He cries as he swings his whip at you, it scrapes across your back just as you escape.";
                     functions.ChurchA1();
                 }
                 else
                 {
-                    Debug.Log("You decide it was not worth the risk and instead search outside the church for usable items. You find a fruit tree and collect some to eat.");
+                    panelOkText.text = "You decide it was not worth the risk and instead search outside the church for usable items. You find a fruit tree and collect some to eat.";
                     functions.ChurchA2();
                 }
                 panel.gameObject.SetActive(false);
                 panelMainText.text = "";
                 currentTag = "";
-                canControl = true;
+                //canControl = true;
                 break;
             case "ChurchB":
+                okPanel.gameObject.SetActive(true);
                 if (leftChoice)
                 {
-                    Debug.Log("As you take the piece of bread, and the sip of wine, the priest smiles and says" +
-                        "“God will carry us through these dark times, here child take this” and hands you a hefty chunk of bread alongside some medicinal herbs.");
+                    panelOkText.text = "As you take the piece of bread, and the sip of wine, the priest smiles and says" +
+                        "“God will carry us through these dark times, here child take this” and hands you a hefty chunk of bread alongside some medicinal herbs.";
                     functions.ChurchB1();
                 }
                 else
                 {
-                    Debug.Log("The priest sees you picking at the pieces of the pews and calls out that he means you no harm," +
-                        "he sees the frightened look on your face and sighs to himself, “very well child, take what you need”");
+                    panelOkText.text = "The priest sees you picking at the pieces of the pews and calls out that he means you no harm," +
+                        "he sees the frightened look on your face and sighs to himself, “very well child, take what you need”";
                     functions.ChurchB2();
                 }
                 panel.gameObject.SetActive(false);
                 panelMainText.text = "";
                 currentTag = "";
-                canControl = true;
                 break;
 
             case "HarborA":
@@ -512,7 +518,6 @@ public class ABHandler : MonoBehaviour
                 panel.gameObject.SetActive(false);
                 panelMainText.text = "";
                 currentTag = "";
-                canControl = true;
                 break;
             case "HarborB":
                 if (leftChoice)
@@ -735,4 +740,10 @@ public class ABHandler : MonoBehaviour
         OperateOnTag(currentTag);
     }
 
+    public void Ok()
+    {
+        panelOkText.text = "";
+        okPanel.SetActive(false);
+        canControl = true;
+    }
 }
