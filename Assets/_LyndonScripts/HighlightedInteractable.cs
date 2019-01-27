@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class HighlightedInteractable : MonoBehaviour
 {
+    public bool isInLocation;
     [Header("Mouse")]
     public Color startColor;
     public Color mouseOverColor;
@@ -54,11 +55,7 @@ public class HighlightedInteractable : MonoBehaviour
 
 
         player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 0, player.transform.eulerAngles.z);
-<<<<<<< HEAD:Assets/LyndonScripts/HighlightedInteractable.cs
 
-=======
-        print(playerAgent.velocity);
->>>>>>> c9cd429bdacd95c9c8c21a9aceb3e7d5f49657d4:Assets/_LyndonScripts/HighlightedInteractable.cs
     }
 
     // Start is called before the first frame update
@@ -88,12 +85,10 @@ public class HighlightedInteractable : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-<<<<<<< HEAD:Assets/LyndonScripts/HighlightedInteractable.cs
+
         isInLocation = true;
-        //interact.gameObject.SetActive(true);
-=======
+
         interact.gameObject.SetActive(true);
->>>>>>> c9cd429bdacd95c9c8c21a9aceb3e7d5f49657d4:Assets/_LyndonScripts/HighlightedInteractable.cs
         if (Input.GetKeyDown(KeyCode.E))
         {
             panel.SetActive(true);
@@ -104,12 +99,10 @@ public class HighlightedInteractable : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-<<<<<<< HEAD:Assets/LyndonScripts/HighlightedInteractable.cs
+
         isInLocation = false;
         //interact.gameObject.SetActive(false);
-=======
         interact.gameObject.SetActive(false);
->>>>>>> c9cd429bdacd95c9c8c21a9aceb3e7d5f49657d4:Assets/_LyndonScripts/HighlightedInteractable.cs
     }
 
     #endregion

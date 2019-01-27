@@ -283,10 +283,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
   dia_opt: {fileID: 167701742}
   locationName: Store
@@ -294,15 +296,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 1788330235}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1552624626}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 2101509740}
+  animator: {fileID: 649812899}
 --- !u!114 &167701742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,6 +809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 649812897}
   - component: {fileID: 649812898}
+  - component: {fileID: 649812899}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -884,6 +879,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &649812899
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649812896}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e8f64d896db33440b49064d533aece8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &669797238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,10 +1308,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
   dia_opt: {fileID: 1052904991}
   locationName: Forest
@@ -1305,15 +1321,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 1788330235}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1552624626}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 2101509740}
+  animator: {fileID: 649812899}
 --- !u!114 &1052904991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1964,10 +1972,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
   dia_opt: {fileID: 1552624628}
   locationName: Beach
@@ -1975,15 +1985,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 1788330235}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1552624626}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 2101509740}
+  animator: {fileID: 649812899}
 --- !u!114 &1552624628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2230,10 +2232,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
   dia_opt: {fileID: 1919369563}
   locationName: Hospital
@@ -2241,15 +2245,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 1788330235}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1552624626}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 2101509740}
+  animator: {fileID: 649812899}
 --- !u!114 &1919369563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2393,10 +2389,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
   dia_opt: {fileID: 1920089213}
   locationName: Hardware Store
@@ -2404,15 +2402,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 1788330235}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1552624626}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 2101509740}
+  animator: {fileID: 649812899}
 --- !u!114 &1920089213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2661,10 +2651,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
   dia_opt: {fileID: 1977662716}
   locationName: Beach
@@ -2672,15 +2664,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 1788330235}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1977662714}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 2101509740}
+  animator: {fileID: 649812899}
 --- !u!1 &2025629798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3055,10 +3039,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590d53d7038f8ad4185199595061f5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInLocation: 0
   startColor: {r: 0.27450982, g: 0.909804, b: 0.2784314, a: 0}
   mouseOverColor: {r: 1, g: 0.7449476, b: 0, a: 0}
   panel: {fileID: 2025629798}
   promptLocation: {fileID: 1896278178}
+  interact: {fileID: 2101509740}
   interText: {fileID: 1406677719}
   dia_opt: {fileID: 4100703616302170044}
   locationName: House
@@ -3066,15 +3052,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 1788330235}
-  locations:
-  - {fileID: 167701740}
-  - {fileID: 4100703616302170038}
-  - {fileID: 1920089211}
-  - {fileID: 1052904989}
-  - {fileID: 1919369561}
-  - {fileID: 1552624626}
-  lastPosition: {x: 0, y: 0, z: 0}
-  interact: {fileID: 2101509740}
+  animator: {fileID: 649812899}
 --- !u!4 &4100703616302170043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2099172952807560688, guid: e7c34e9feef54ec4c812f4724bd85250,
