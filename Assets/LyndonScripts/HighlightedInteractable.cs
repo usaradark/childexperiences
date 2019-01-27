@@ -17,9 +17,8 @@ public class HighlightedInteractable : MonoBehaviour
     public string locationName;
     bool mouseOver = false;
 
-    public Button Option1;
-    public Button Option2;
-    public Button Back;
+    public Button yes;
+    public Button no;
 
     Camera cam;
     public LayerMask groundLayer;
@@ -28,7 +27,8 @@ public class HighlightedInteractable : MonoBehaviour
 
     public GameObject[] locations;
 
-    public Vector3 point;
+    public Vector3 lastPosition;
+    private bool isInLocation;
 
     #region Monobehavior API;
 
@@ -36,6 +36,18 @@ public class HighlightedInteractable : MonoBehaviour
     {
         panel.SetActive(false);
         playerAgent = player.GetComponent<NavMeshAgent>();
+    }
+
+    private void Update()
+    {
+        lastPosition = player.transform.position;
+        if (lastPosition == player.transform.position && isInLocation)
+        {
+            panel.SetActive(true);
+
+            promptLocation.text = locationName;
+        }
+        player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 0, player.transform.eulerAngles.z);
     }
 
     // Start is called before the first frame update
@@ -53,24 +65,19 @@ public class HighlightedInteractable : MonoBehaviour
 
     private void OnMouseDown()
     {
+
         if (this.gameObject.CompareTag("Location"))
         {
-            point = this.gameObject.transform.position;
-
-            panel.SetActive(true);
             playerAgent.SetDestination(gameObject.transform.position);
-            promptLocation.text = locationName;
 
-            Option1.onClick.RemoveAllListeners();
-            Option2.onClick.RemoveAllListeners();
+            yes.onClick.RemoveAllListeners();
+            no.onClick.RemoveAllListeners();
 
-            Option1.onClick.AddListener(setLocationTagBack);
-            Option2.onClick.AddListener(setLocationTagBack);
+            yes.onClick.AddListener(setLocationTagBack);
+            no.onClick.AddListener(setLocationTagBack);
 
-            Option1.onClick.AddListener(dia_opt.printOption_1_Result);
-            Option2.onClick.AddListener(dia_opt.printOption_2_Result);
-
-            Back.onClick.AddListener(disablePanel);
+            yes.onClick.AddListener(dia_opt.yes);
+            no.onClick.AddListener(dia_opt.no);
 
             setLocationTagToIgnore();
         }
@@ -99,6 +106,18 @@ public class HighlightedInteractable : MonoBehaviour
         panel.SetActive(false);
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        isInLocation = true;           
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        isInLocation = false;
+    }
+
     #endregion
+
+    
 
 }

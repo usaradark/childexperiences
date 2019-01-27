@@ -14,7 +14,9 @@ public class dialogue_option : MonoBehaviour
     public Button option1;
     public Button option2;
 
-    public void printOption_1_Result()
+    public GameObject panel;
+
+    public void yes()
     {
         string dialogue = "";
         int num = Random.Range(0, 2);
@@ -23,12 +25,13 @@ public class dialogue_option : MonoBehaviour
             dialogue = badDialogue_1;
         else
             dialogue = goodDialogue_1;
-        option1.gameObject.SetActive(false);
-        option2.gameObject.SetActive(false);
-        StartCoroutine(TypeSentence(dialogue));
+        //option1.gameObject.SetActive(false);
+        //option2.gameObject.SetActive(false);
+        //StartCoroutine(TypeSentence(dialogue));
+        panel.SetActive(false);
     }
 
-    public void printOption_2_Result()
+    public void no()
     {
         string dialogue = "";
         int num = Random.Range(0, 2);
@@ -38,9 +41,10 @@ public class dialogue_option : MonoBehaviour
         else
             dialogue = goodDialogue_2;
 
-        option1.gameObject.SetActive(false);
-        option2.gameObject.SetActive(false);
-        StartCoroutine(TypeSentence(dialogue));
+        //option1.gameObject.SetActive(false);
+        //option2.gameObject.SetActive(false);
+        panel.SetActive(false);
+        //StartCoroutine(TypeSentence(dialogue));
     }
 
     IEnumerator TypeSentence(string dialogue)
