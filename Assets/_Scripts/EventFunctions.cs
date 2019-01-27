@@ -53,33 +53,40 @@ public class EventFunctions : MonoBehaviour
         {
             case 0:
                 HeavyRain();
+                Debug.Log("Heavy Rain");
                 break;
             case 1:
                 SnowStorm();
+                Debug.Log("Snow Storm");
                 break;
             case 2:
                 MomExtraSick();
+                Debug.Log("Mom got extra sick");
                 break;
             case 3:
                 Burglar();
+                Debug.Log("Burglar");
                 break;
             case 4:
                 Nomads();
+                Debug.Log("Nomads");
                 break;
             case 5:
                 QuietNight();
+                Debug.Log("Quiet Night");
                 break;
         }
     }
 
     public void NightEvent()
     {
-        //NightRandomEvent();
-        //UpdateAll();
-        ZeroAll();
+        NightRandomEvent();
+        UpdateAll();
+        //ZeroAll();
         deltaSelfHealth = (int)(-1 * existingValues.playerHPLoss);
         deltaMomHealth = (int)(-1 * existingValues.momHPLoss);
         deltaShelterHealth = (int)(-1 * existingValues.shelterHPLoss);
+        existingValues.fireIsLit = false;
     }
 
     public void ChurchA1()
@@ -239,6 +246,7 @@ public class EventFunctions : MonoBehaviour
         ZeroAll();
         deltaWood = -2;
         deltaShelterHealthDecreaseRate = .5f;
+        existingValues.holeIsPatched = true;
     }
 
     public void CreateFire()
@@ -246,6 +254,7 @@ public class EventFunctions : MonoBehaviour
         ZeroAll();
         deltaWood = -2;
         deltaShelterHealth = 35;
+        existingValues.fireIsLit = true;
     }
 
     public void SelfEatFood()
