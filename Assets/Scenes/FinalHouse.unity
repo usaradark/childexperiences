@@ -1120,6 +1120,11 @@ PrefabInstance:
       propertyPath: canControl
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6084962795937530006, guid: 2160b2e97f2c2344f88b3eb0ec38e0b6,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1035426728}
     - target: {fileID: 7762520765636981114, guid: 2160b2e97f2c2344f88b3eb0ec38e0b6,
         type: 3}
       propertyPath: m_Enabled
@@ -1320,6 +1325,26 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 355346764}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1035426728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5985018436718453444, guid: 0cccbe36d33c5b543bb660365a93df3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 347787301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1035426731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035426728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e2d5ced5db42444a6177d7eda65961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  momDeadClip: {fileID: 8300000, guid: 286394b19cce5644e8c95f79d654b587, type: 3}
+  audio: {fileID: 0}
 --- !u!1001 &1065045211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1937,7 +1962,7 @@ PrefabInstance:
     - target: {fileID: 2084253914411273703, guid: 681742e305b06a34b95c7475cc06f9b1,
         type: 3}
       propertyPath: momHP
-      value: 100
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2084253914411273703, guid: 681742e305b06a34b95c7475cc06f9b1,
         type: 3}

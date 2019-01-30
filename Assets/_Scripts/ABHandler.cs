@@ -14,6 +14,7 @@ public class ABHandler : MonoBehaviour
     public GameObject panel;
     public GameObject okPanel;
     public GameObject sceneHandler;
+    public GameObject audioManager;
 
     private Text panelMainText;
     private Text panelOkText;
@@ -21,6 +22,7 @@ public class ABHandler : MonoBehaviour
     private Text buttonBText;
 
     private EventFunctions functions;
+    private AudioManagerHouse audioScript;
 
     private StatsManagerController smc;
     private SceneInteract sceneManager;
@@ -53,6 +55,7 @@ public class ABHandler : MonoBehaviour
         panelOkText = okPanel.transform.GetChild(0).GetComponent<Text>();
         panelOkText.text = "";
         okPanel.SetActive(false);
+        audioScript = audioManager.GetComponent<AudioManagerHouse>();
     }
 
     // Update is called once per frame
@@ -735,6 +738,9 @@ public class ABHandler : MonoBehaviour
         else if (smc.momHP < 0)
         {
             momDead = true;
+            audioScript.audio.Pause();
+            audioScript.audio.clip = audioScript.momDeadClip;
+            audioScript.audio.Play();
         }
     }
 

@@ -107,7 +107,6 @@ public class StatsManagerController : MonoBehaviour
             GameObject.Find("Food Value").GetComponent<TextMeshProUGUI>().text = myFood.ToString();
             GameObject.Find("Medicine Value").GetComponent<TextMeshProUGUI>().text = myMedicine.ToString();
             GameObject.Find("Wood Value").GetComponent<TextMeshProUGUI>().text = myWood.ToString();
-
         }
     }
 }
