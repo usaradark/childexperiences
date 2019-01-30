@@ -2069,7 +2069,7 @@ MonoBehaviour:
   persistantObjects:
   - {fileID: 1886008946}
   - {fileID: 2084253914411273702, guid: 681742e305b06a34b95c7475cc06f9b1, type: 3}
-  - {fileID: 5985018436718453444}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!4 &1886008948
@@ -2362,12 +2362,6 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 8485596670153594328}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5985018436718453444 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5985018436718453444, guid: 0cccbe36d33c5b543bb660365a93df3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 8485596670153594328}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8485596670153594328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2379,26 +2373,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737047231321182074, guid: 0cccbe36d33c5b543bb660365a93df3d,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0119e298ae0d7374697cd8d37d124f76, type: 3}
-    - target: {fileID: 5737047231321182074, guid: 0cccbe36d33c5b543bb660365a93df3d,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737047231321182074, guid: 0cccbe36d33c5b543bb660365a93df3d,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737047231321182074, guid: 0cccbe36d33c5b543bb660365a93df3d,
-        type: 3}
-      propertyPath: rolloffMode
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5214629484934602598, guid: 0cccbe36d33c5b543bb660365a93df3d,
         type: 3}
@@ -2454,6 +2428,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737047231321182074, guid: 0cccbe36d33c5b543bb660365a93df3d,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0119e298ae0d7374697cd8d37d124f76, type: 3}
+    - target: {fileID: 5737047231321182074, guid: 0cccbe36d33c5b543bb660365a93df3d,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737047231321182074, guid: 0cccbe36d33c5b543bb660365a93df3d,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737047231321182074, guid: 0cccbe36d33c5b543bb660365a93df3d,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cccbe36d33c5b543bb660365a93df3d, type: 3}

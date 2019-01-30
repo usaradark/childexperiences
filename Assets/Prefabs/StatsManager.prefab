@@ -49,3 +49,9 @@ MonoBehaviour:
   momHPLoss: 1
   shelterHP: 100
   shelterHPLoss: 5
+  fireIsLit: 0
+  holeIsPatched: 0
+  myFood: 0
+  myMedicine: 0
+  myWood: 0
+  myDays: 0
